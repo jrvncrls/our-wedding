@@ -1,41 +1,23 @@
 @use 'abstracts/mixins' as m;
 
 .gallery {
-  &__header {
-    text-align: center;
-    margin-bottom: var(--space-12);
-  }
-
-  &__title {
-    font-family: var(--font-display);
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
-    font-weight: 400;
-    color: var(--color-text-600);
-    margin-bottom: 0.5rem;
-  }
-
-  // ── Carousel ─────────────────────────────────────────────
+  width: 100%;
+  // max-width: 1280px;
+  margin: 0 auto;
 
   &__carousel {
     position: relative;
-    max-width: 860px;
-    margin: 0 auto var(--space-6);
-    border-radius: var(--radius-xl);
+    width: 100%;
     overflow: hidden;
-    box-shadow: var(--shadow-xl);
-
-    @include m.from(md) {
-      border-radius: 1.75rem;
-    }
   }
 
   &__slides {
     position: relative;
-    aspect-ratio: 4 / 3;
+    height: 500px;
     background: var(--color-neutral-100);
 
-    @include m.from(md) {
-      aspect-ratio: 16 / 9;
+    @include m.from(lg) {
+      height: 750px;
     }
   }
 
@@ -54,7 +36,6 @@
   }
 
   &__image-wrapper {
-    position: relative;
     width: 100%;
     height: 100%;
     background-color: var(--color-neutral-100);
@@ -63,7 +44,6 @@
     background-repeat: no-repeat;
   }
 
-  // Placeholder shown when image is missing
   &__placeholder {
     position: absolute;
     inset: 0;
@@ -71,19 +51,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.75rem;
+    gap: var(--space-3);
     color: var(--color-neutral-300);
 
-    // Hidden if background-image loads (CSS can't detect this; placeholder
-    // acts as a background fallback for demo purposes)
     i {
-      font-size: 3rem;
+      font-size: var(--space-12);
     }
 
     span {
-      font-family: var(--font-primary);
-      font-size: 0.875rem;
-      font-weight: 500;
+      font: var(--body-sm-medium) var(--font-primary);
     }
   }
 
@@ -93,29 +69,29 @@
     left: 0;
     right: 0;
     z-index: 2;
-    padding: 2rem 1.5rem 1rem;
-    background: linear-gradient(to top, hsla(212, 33%, 10%, 0.7), transparent);
-    font-family: var(--font-primary);
-    font-size: 0.875rem;
-    font-weight: 500;
+    padding: var(--space-8) var(--space-6) var(--space-4);
+    background: linear-gradient(
+      to top,
+      color-mix(in srgb, var(--color-neutral-800) 70%, transparent),
+      transparent
+    );
+    font: var(--body-sm-medium) var(--font-primary);
     color: var(--color-white);
     font-style: italic;
     text-align: center;
   }
-
-  // ── Controls ─────────────────────────────────────────────
 
   &__control {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     z-index: 3;
-    width: 2.75rem;
-    height: 2.75rem;
+    width: var(--space-10);
+    height: var(--space-10);
     display: flex;
     align-items: center;
     justify-content: center;
-    background: hsla(0, 0%, 100%, 0.88);
+    background: color-mix(in srgb, var(--color-white) 88%, transparent);
     border: none;
     border-radius: var(--radius-full);
     color: var(--color-neutral-700);
@@ -131,60 +107,15 @@
       transform: translateY(-50%) scale(1.08);
     }
 
-    &:active {
-      transform: translateY(-50%) scale(0.95);
-    }
-
     i {
-      font-size: 1.5rem;
-      line-height: 1;
+      font-size: var(--space-6);
     }
 
     &--prev {
-      left: 1rem;
+      left: var(--space-4);
     }
     &--next {
-      right: 1rem;
+      right: var(--space-4);
     }
-
-    @include m.from(md) {
-      width: 3.25rem;
-      height: 3.25rem;
-    }
-  }
-
-  // ── Dots ─────────────────────────────────────────────────
-
-  &__dots {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-bottom: 0.75rem;
-  }
-
-  &__dot {
-    width: 8px;
-    height: 8px;
-    border-radius: var(--radius-full);
-    background: var(--color-primary-300);
-    border: none;
-    cursor: pointer;
-    transition:
-      background var(--transition-base),
-      width var(--transition-base);
-
-    &--active {
-      width: 24px;
-      background: var(--color-primary-500);
-    }
-  }
-
-  &__counter {
-    text-align: center;
-    font-family: var(--font-primary);
-    font-size: 0.8125rem;
-    color: var(--color-neutral-400);
-    font-weight: 500;
   }
 }
