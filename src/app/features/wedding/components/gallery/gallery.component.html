@@ -1,0 +1,82 @@
+<section class="gallery section section--cream" id="gallery" aria-label="Photo gallery">
+  <div class="container">
+
+    <div class="gallery__header">
+      <span class="eyebrow">Our Journey</span>
+      <h2 class="gallery__title">A Love Story in Pictures</h2>
+      <span class="section-rule"></span>
+    </div>
+
+    <div class="gallery__carousel" role="region" aria-label="Photo carousel">
+
+      <!-- Slides -->
+      <div class="gallery__slides" aria-live="polite">
+        @for (image of images; track image.src; let i = $index) {
+          <div
+            class="gallery__slide"
+            [class.gallery__slide--active]="i === currentIndex()"
+            [class.gallery__slide--prev]="i === (currentIndex() - 1 + images.length) % images.length"
+            [attr.aria-hidden]="i !== currentIndex()"
+            role="img"
+            [attr.aria-label]="image.alt"
+          >
+            <!-- Replace with actual images — placeholder shown if image missing -->
+            <div
+              class="gallery__image-wrapper"
+              [style.background-image]="'url(' + image.src + ')'"
+            >
+              <div class="gallery__placeholder" aria-hidden="true">
+                <i class="uil uil-image"></i>
+                <span>Add your photo here</span>
+              </div>
+            </div>
+
+            @if (image.caption) {
+              <p class="gallery__caption">{{ image.caption }}</p>
+            }
+          </div>
+        }
+      </div>
+
+      <!-- Controls -->
+      <button
+        class="gallery__control gallery__control--prev"
+        (click)="prev()"
+        aria-label="Previous photo"
+        [attr.aria-disabled]="isFirst()"
+      >
+        <i class="uil uil-angle-left"></i>
+      </button>
+
+      <button
+        class="gallery__control gallery__control--next"
+        (click)="next()"
+        aria-label="Next photo"
+        [attr.aria-disabled]="isLast()"
+      >
+        <i class="uil uil-angle-right"></i>
+      </button>
+
+    </div>
+
+    <!-- Dot indicators -->
+    <div class="gallery__dots" role="tablist" aria-label="Gallery navigation">
+      @for (image of images; track image.src; let i = $index) {
+        <button
+          class="gallery__dot"
+          [class.gallery__dot--active]="i === currentIndex()"
+          role="tab"
+          [attr.aria-selected]="i === currentIndex()"
+          [attr.aria-label]="'Photo ' + (i + 1) + ' of ' + images.length"
+          (click)="goTo(i)"
+        ></button>
+      }
+    </div>
+
+    <!-- Counter -->
+    <p class="gallery__counter" aria-hidden="true">
+      {{ currentIndex() + 1 }} / {{ images.length }}
+    </p>
+
+  </div>
+</section>

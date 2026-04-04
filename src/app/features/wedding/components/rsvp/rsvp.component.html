@@ -1,0 +1,195 @@
+<section class="rsvp section" id="rsvp" aria-label="RSVP form">
+  <div class="rsvp__bg-ornament" aria-hidden="true"></div>
+
+  <div class="container container--narrow">
+
+    <div class="rsvp__header">
+      <span class="eyebrow" style="color: var(--color-primary-300)">Kindly Reply</span>
+      <h2 class="rsvp__title">RSVP</h2>
+      <p class="rsvp__subtitle">
+        Please respond by <strong>November 22, 2026</strong> so we can plan accordingly.
+      </p>
+    </div>
+
+    <!-- Success State -->
+    @if (submitted()) {
+      <div class="rsvp__success" role="alert" aria-live="polite">
+        <div class="rsvp__success-icon" aria-hidden="true">
+          <i class="uil uil-check-circle"></i>
+        </div>
+        <h3 class="rsvp__success-title">
+          {{ isAttending() ? 'See You There!' : 'We\'ll Miss You' }}
+        </h3>
+        <p class="rsvp__success-message">
+          @if (isAttending()) {
+            Thank you for your RSVP! We are so excited to celebrate with you.
+            Details will be sent to you closer to the date.
+          } @else {
+            Thank you for letting us know. You will be missed, and we hope
+            to celebrate with you another time.
+          }
+        </p>
+        <button class="rsvp__success-reset" (click)="resetForm()">
+          Update my response
+        </button>
+      </div>
+    }
+
+    <!-- Form -->
+    @if (!submitted()) {
+      <form
+        class="rsvp__form"
+        [formGroup]="form"
+        (ngSubmit)="onSubmit()"
+        novalidate
+        aria-label="RSVP form"
+      >
+
+        <!-- Full Name -->
+        <div class="rsvp__field">
+          <label class="rsvp__label" for="fullName">
+            Your Full Name <span class="rsvp__required" aria-hidden="true">*</span>
+          </label>
+          <input
+            class="rsvp__input"
+            [class.rsvp__input--error]="fieldInvalid('fullName')"
+            id="fullName"
+            type="text"
+            formControlName="fullName"
+            placeholder="e.g. Maria Santos"
+            autocomplete="name"
+            [attr.aria-invalid]="fieldInvalid('fullName')"
+            aria-describedby="fullName-error"
+          >
+          @if (fieldInvalid('fullName')) {
+            <p class="rsvp__error" id="fullName-error" role="alert">
+              <i class="uil uil-exclamation-circle"></i>
+              Please enter your full name.
+            </p>
+          }
+        </div>
+
+        <!-- Partner name -->
+        <div class="rsvp__field">
+          <label class="rsvp__label" for="partner">
+            Partner / Plus-One <span class="rsvp__label-hint">(if applicable)</span>
+          </label>
+          <input
+            class="rsvp__input"
+            id="partner"
+            type="text"
+            formControlName="partner"
+            placeholder="Guest's full name"
+            autocomplete="off"
+          >
+        </div>
+
+        <!-- Attendance -->
+        <div class="rsvp__field">
+          <fieldset class="rsvp__fieldset">
+            <legend class="rsvp__label">
+              Will you be attending? <span class="rsvp__required" aria-hidden="true">*</span>
+            </legend>
+            <div class="rsvp__radio-group">
+              <label class="rsvp__radio-label" [class.rsvp__radio-label--selected]="isAttending()">
+                <input
+                  type="radio"
+                  formControlName="attending"
+                  value="yes"
+                  class="rsvp__radio-input"
+                >
+                <span class="rsvp__radio-box" aria-hidden="true">
+                  <i class="uil uil-check"></i>
+                </span>
+                <span class="rsvp__radio-text">
+                  <strong>Joyfully Accept</strong>
+                  <small>I will be there!</small>
+                </span>
+              </label>
+
+              <label class="rsvp__radio-label" [class.rsvp__radio-label--selected]="isNotAttending()">
+                <input
+                  type="radio"
+                  formControlName="attending"
+                  value="no"
+                  class="rsvp__radio-input"
+                >
+                <span class="rsvp__radio-box" aria-hidden="true">
+                  <i class="uil uil-times"></i>
+                </span>
+                <span class="rsvp__radio-text">
+                  <strong>Regretfully Decline</strong>
+                  <small>I cannot make it</small>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+          @if (fieldInvalid('attending')) {
+            <p class="rsvp__error" role="alert">
+              <i class="uil uil-exclamation-circle"></i>
+              Please select your attendance.
+            </p>
+          }
+        </div>
+
+        <!-- Meal choice (only when attending) -->
+        @if (isAttending()) {
+          <div class="rsvp__field rsvp__field--animate">
+            <label class="rsvp__label" for="meal">Meal Preference</label>
+            <select class="rsvp__select" id="meal" formControlName="meal">
+              <option value="" disabled>Select a meal</option>
+              <option value="beef">Beef Tenderloin</option>
+              <option value="fish">Grilled Sea Bass</option>
+              <option value="vegetarian">Vegetarian Option</option>
+            </select>
+          </div>
+        }
+
+        <!-- Dietary requirements -->
+        <div class="rsvp__field">
+          <label class="rsvp__label" for="dietary">Dietary Requirements</label>
+          <input
+            class="rsvp__input"
+            id="dietary"
+            type="text"
+            formControlName="dietary"
+            placeholder="e.g. Gluten-free, nut allergy, vegan…"
+          >
+        </div>
+
+        <!-- Message -->
+        <div class="rsvp__field">
+          <label class="rsvp__label" for="message">Leave a Message</label>
+          <textarea
+            class="rsvp__textarea"
+            id="message"
+            formControlName="message"
+            rows="3"
+            placeholder="Share your wishes for the couple…"
+          ></textarea>
+        </div>
+
+        <!-- Submit -->
+        <div class="rsvp__submit">
+          <app-button
+            variant="primary"
+            size="lg"
+            type="submit"
+            [fullWidth]="true"
+            [disabled]="submitting()"
+          >
+            @if (submitting()) {
+              <i class="uil uil-spinner-alt rsvp__spinner"></i>
+              Sending…
+            } @else {
+              <i class="uil uil-envelope-heart"></i>
+              Send RSVP
+            }
+          </app-button>
+        </div>
+
+      </form>
+    }
+
+  </div>
+</section>

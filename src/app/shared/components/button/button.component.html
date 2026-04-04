@@ -1,0 +1,10 @@
+<button
+  class="btn"
+  [ngClass]="classes"
+  [type]="type"
+  [disabled]="disabled"
+  [attr.aria-disabled]="disabled"
+  (click)="handleClick()"
+>
+  <ng-content></ng-content>
+</button>

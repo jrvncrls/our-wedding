@@ -1,0 +1,36 @@
+<section class="timeline section" id="timeline" aria-label="Wedding day timeline">
+  <div class="container container--narrow">
+
+    <div class="timeline__header">
+      <span class="eyebrow">The Schedule</span>
+      <h2 class="timeline__title">The Day's Programme</h2>
+      <span class="section-rule"></span>
+    </div>
+
+    <ol class="timeline__list">
+      @for (event of events; track event.time; let i = $index; let last = $last) {
+        <li class="timeline__item" [class.timeline__item--last]="last">
+
+          <!-- Icon node -->
+          <div class="timeline__node" aria-hidden="true">
+            <div class="timeline__icon">
+              <i class="uil {{ event.icon }}"></i>
+            </div>
+            @if (!last) {
+              <span class="timeline__connector"></span>
+            }
+          </div>
+
+          <!-- Content -->
+          <div class="timeline__content">
+            <span class="timeline__time">{{ event.time }}</span>
+            <h3 class="timeline__event-title">{{ event.title }}</h3>
+            <p class="timeline__description">{{ event.description }}</p>
+          </div>
+
+        </li>
+      }
+    </ol>
+
+  </div>
+</section>

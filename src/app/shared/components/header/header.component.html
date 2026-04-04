@@ -1,0 +1,118 @@
+<header
+  class="header"
+  [class.header--scrolled]="scrolled()"
+  [class.header--menu-open]="mobileMenuOpen()"
+  role="banner"
+>
+  <div class="header__inner">
+
+    <!-- Logo -->
+    <a class="header__logo" href="#" (click)="scrollTo('home'); $event.preventDefault()" aria-label="Back to top">
+      <span class="header__logo-text">J<span class="header__logo-amp">&amp;</span>J</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="header__nav" aria-label="Main navigation">
+      <ul class="header__nav-list" role="list">
+
+        <!-- Wedding dropdown -->
+        <li
+          class="header__nav-item header__nav-item--has-dropdown"
+          (mouseenter)="openWeddingDropdown()"
+          (mouseleave)="closeWeddingDropdown()"
+        >
+          <button
+            class="header__nav-link"
+            [attr.aria-expanded]="weddingDropdownOpen()"
+            aria-haspopup="true"
+          >
+            Wedding <i class="uil uil-angle-down header__nav-chevron"></i>
+          </button>
+
+          <ul
+            class="header__dropdown"
+            [class.header__dropdown--visible]="weddingDropdownOpen()"
+            role="list"
+            aria-label="Wedding submenu"
+          >
+            <li>
+              <button class="header__dropdown-link" (click)="scrollTo('timeline')">
+                <i class="uil uil-schedule"></i> Timeline
+              </button>
+            </li>
+            <li>
+              <button class="header__dropdown-link" (click)="scrollTo('location')">
+                <i class="uil uil-map-marker"></i> Location
+              </button>
+            </li>
+            <li>
+              <button class="header__dropdown-link" (click)="scrollTo('dress-code')">
+                <i class="uil uil-shirt"></i> Dress Code
+              </button>
+            </li>
+            <li>
+              <button class="header__dropdown-link" (click)="scrollTo('gifts')">
+                <i class="uil uil-gift"></i> Registry
+              </button>
+            </li>
+          </ul>
+        </li>
+
+        <li class="header__nav-item">
+          <button class="header__nav-link" (click)="scrollTo('gallery')">Gallery</button>
+        </li>
+
+        <li class="header__nav-item">
+          <button class="header__nav-link" (click)="scrollTo('countdown')">Our Story</button>
+        </li>
+
+      </ul>
+    </nav>
+
+    <!-- Desktop CTA -->
+    <div class="header__cta">
+      <app-button variant="primary" size="sm" (clicked)="scrollTo('rsvp')">RSVP</app-button>
+    </div>
+
+    <!-- Hamburger -->
+    <button
+      class="header__hamburger"
+      [class.header__hamburger--open]="mobileMenuOpen()"
+      (click)="toggleMobileMenu()"
+      [attr.aria-expanded]="mobileMenuOpen()"
+      aria-controls="mobile-menu"
+      aria-label="Toggle navigation"
+    >
+      <span class="header__bar"></span>
+      <span class="header__bar"></span>
+      <span class="header__bar"></span>
+    </button>
+
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="header__mobile-menu"
+    [class.header__mobile-menu--open]="mobileMenuOpen()"
+    role="dialog"
+    aria-modal="false"
+    [attr.aria-hidden]="!mobileMenuOpen()"
+  >
+    <nav aria-label="Mobile navigation">
+      <ul class="header__mobile-list" role="list">
+        <li><button class="header__mobile-link" (click)="scrollTo('timeline')">Timeline</button></li>
+        <li><button class="header__mobile-link" (click)="scrollTo('location')">Location</button></li>
+        <li><button class="header__mobile-link" (click)="scrollTo('dress-code')">Dress Code</button></li>
+        <li><button class="header__mobile-link" (click)="scrollTo('gifts')">Registry</button></li>
+        <li><button class="header__mobile-link" (click)="scrollTo('gallery')">Gallery</button></li>
+        <li><button class="header__mobile-link" (click)="scrollTo('countdown')">Our Story</button></li>
+      </ul>
+    </nav>
+
+    <div class="header__mobile-cta">
+      <app-button variant="primary" [fullWidth]="true" (clicked)="scrollTo('rsvp')">RSVP Now</app-button>
+    </div>
+  </div>
+
+</header>

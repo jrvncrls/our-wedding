@@ -1,0 +1,71 @@
+<section class="dress-code section section--cream" id="dress-code" aria-label="Dress code information">
+  <div class="container container--narrow">
+
+    <div class="dress-code__header">
+      <span class="eyebrow">What to Wear</span>
+      <h2 class="dress-code__title">Dress Code</h2>
+      <span class="section-rule"></span>
+    </div>
+
+    <div class="dress-code__body">
+
+      <div class="dress-code__formal-badge">
+        <i class="uil uil-star-half-alt" aria-hidden="true"></i>
+        <span>Formal Attire</span>
+      </div>
+
+      <p class="dress-code__description">
+        We invite you to dress elegantly for our special day. Think floor-length
+        gowns, cocktail dresses, or smart suits. We want everyone to feel their
+        most beautiful.
+      </p>
+
+      <div class="dress-code__guidelines">
+        <div class="dress-code__guideline dress-code__guideline--do">
+          <div class="dress-code__guideline-header">
+            <i class="uil uil-check-circle" aria-hidden="true"></i>
+            <strong>Please Do</strong>
+          </div>
+          <ul>
+            <li>Floor-length or tea-length gowns for ladies</li>
+            <li>Suits or barong tagalog for gentlemen</li>
+            <li>Elegant cocktail dresses</li>
+            <li>Smart formal separates</li>
+          </ul>
+        </div>
+
+        <div class="dress-code__guideline dress-code__guideline--dont">
+          <div class="dress-code__guideline-header">
+            <i class="uil uil-times-circle" aria-hidden="true"></i>
+            <strong>Please Avoid</strong>
+          </div>
+          <ul>
+            <li>White, ivory, or cream (reserved for the bride)</li>
+            <li>Casual wear, jeans, or shorts</li>
+            <li>Flip-flops or athletic footwear</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Color palette -->
+      <div class="dress-code__palette">
+        <p class="dress-code__palette-label">Suggested Colour Palette</p>
+        <div class="dress-code__swatches">
+          @for (swatch of palette; track swatch.name) {
+            <div class="dress-code__swatch" [title]="swatch.name">
+              <span
+                class="dress-code__swatch-color"
+                [style.background]="swatch.hsla"
+                role="img"
+                [attr.aria-label]="swatch.name + ' — ' + swatch.hex"
+              ></span>
+              <span class="dress-code__swatch-name">{{ swatch.name }}</span>
+            </div>
+          }
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

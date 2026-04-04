@@ -1,0 +1,30 @@
+<section class="getting-there section section--cream" id="getting-there" aria-label="Getting to the venue">
+  <div class="container">
+
+    <div class="getting-there__header">
+      <span class="eyebrow">Travel Info</span>
+      <h2 class="getting-there__title">Getting There</h2>
+      <span class="section-rule"></span>
+    </div>
+
+    <div class="getting-there__grid">
+      @for (option of travelOptions; track option.title) {
+        <div class="getting-there__card">
+          <div class="getting-there__card-icon" aria-hidden="true">
+            <i class="uil {{ option.icon }}"></i>
+          </div>
+          <h3 class="getting-there__card-title">{{ option.title }}</h3>
+          <ul class="getting-there__card-list">
+            @for (detail of option.details; track detail) {
+              <li class="getting-there__card-item">
+                <i class="uil uil-check-circle" aria-hidden="true"></i>
+                {{ detail }}
+              </li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,68 @@
+// ============================================================
+// GLOBAL STYLESHEET ENTRY POINT
+// Import order: abstracts → base → layout → global utilities
+// ============================================================
+
+// 1. Design tokens & mixins (no CSS output, just definitions)
+@use 'abstracts/variables';
+@use 'abstracts/mixins';
+
+// 2. Reset + base typography (produces CSS output)
+@use 'base/index';
+
+// 3. Global layout helpers
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  @media screen and (min-width: 768px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+.container--narrow { max-width: 768px; }
+.container--wide   { max-width: 1536px; }
+
+// 4. Section spacing
+.section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+.section--cream { background-color: var(--color-bg-tint); }
+
+// 5. Global keyframes
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(8px); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}

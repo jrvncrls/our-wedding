@@ -1,0 +1,93 @@
+@use 'abstracts/mixins' as m;
+
+.getting-there {
+
+  &__header {
+    text-align: center;
+    margin-bottom: var(--space-12);
+  }
+
+  &__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 400;
+    color: var(--color-text-600);
+    margin-bottom: 0.5rem;
+  }
+
+  // ── Cards grid ───────────────────────────────────────────
+
+  &__grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+
+    @include m.from(md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__card {
+    background: var(--color-white);
+    border: 1px solid var(--color-primary-200);
+    border-radius: var(--radius-xl);
+    padding: 2rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    transition: box-shadow var(--transition-base), transform var(--transition-base);
+
+    &:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    &-icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-primary-100);
+      border-radius: var(--radius-lg);
+      color: var(--color-text-500);
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    &-title {
+      font-family: var(--font-primary);
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: var(--color-neutral-700);
+      margin-bottom: 1rem;
+    }
+
+    &-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    &-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-family: var(--font-primary);
+      font-size: 0.9rem;
+      color: var(--color-neutral-500);
+      line-height: 1.55;
+
+      i {
+        font-size: 1rem;
+        color: var(--color-primary-500);
+        margin-top: 0.15rem;
+        flex-shrink: 0;
+      }
+    }
+  }
+}

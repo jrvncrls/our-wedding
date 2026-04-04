@@ -1,0 +1,76 @@
+<section class="location section" id="location" aria-label="Venue location">
+  <div class="container">
+
+    <div class="location__header">
+      <span class="eyebrow">Find Us</span>
+      <h2 class="location__title">The Venue</h2>
+      <span class="section-rule"></span>
+    </div>
+
+    <div class="location__layout">
+
+      <!-- Map embed placeholder -->
+      <div class="location__map-wrapper" aria-label="Map showing venue location">
+        <div class="location__map-placeholder" aria-hidden="true">
+          <i class="uil uil-map"></i>
+          <p>
+            Replace this block with a Google Maps embed.<br>
+            <code>&lt;iframe src="https://maps.google.com/maps?q=..."&gt;&lt;/iframe&gt;</code>
+          </p>
+        </div>
+        <!-- Uncomment and replace with actual embed:
+        <iframe
+          title="Venue location map"
+          src="YOUR_GOOGLE_MAPS_EMBED_URL"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+        -->
+      </div>
+
+      <!-- Info card -->
+      <div class="location__info">
+
+        <div class="location__venue-name">
+          <i class="uil uil-building location__venue-icon" aria-hidden="true"></i>
+          <h3>{{ venue.name }}</h3>
+        </div>
+
+        <address class="location__address">
+          <p>{{ venue.address }}</p>
+          <p>{{ venue.city }}</p>
+          <p>{{ venue.country }}</p>
+        </address>
+
+        <div class="location__meta">
+          <div class="location__meta-item">
+            <i class="uil uil-phone" aria-hidden="true"></i>
+            <a [href]="'tel:' + venue.phone">{{ venue.phone }}</a>
+          </div>
+          <div class="location__meta-item">
+            <i class="uil uil-calendar-alt" aria-hidden="true"></i>
+            <span>December 22, 2026 · 4:00 PM</span>
+          </div>
+        </div>
+
+        <a
+          class="location__directions-btn"
+          href="https://www.google.com/maps/search/?api=1&query=Roxas+Boulevard+Manila+Philippines"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open venue in Google Maps"
+        >
+          <i class="uil uil-directions"></i>
+          Get Directions
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

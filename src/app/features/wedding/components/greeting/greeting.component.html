@@ -1,0 +1,57 @@
+<section class="greeting" id="home" aria-label="Wedding greeting">
+
+  <!-- Video background -->
+  <div class="greeting__media" aria-hidden="true">
+    <video
+      class="greeting__video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="none"
+    >
+      <!-- Replace with your actual hero video -->
+      <source src="background.mp4" type="video/mp4" autoplay muted loop playsinline>
+    </video>
+    <!-- Overlay -->
+    <div class="greeting__overlay"></div>
+  </div>
+
+  <!-- Invitation Letter -->
+  <div class="greeting__content">
+    <p class="greeting__salutation">{{ name() }},</p>
+
+    <p class="greeting__body greeting__body--animate-1">
+      Together with our families, we warmly invite you to join us for our wedding as we begin our
+      life together.
+    </p>
+    <p class="greeting__body greeting__body--animate-2">
+      Please note that this invitation is intended for you only, as we are keeping our celebration
+      intimate.
+    </p>
+    <p class="greeting__body greeting__body--animate-3">
+      We truly look forward to celebrating with you.
+    </p>
+
+    <div class="greeting__regards" aria-hidden="true"></div>
+
+    <p class="greeting__caption greeting__caption--animate">With love,</p>
+    <p class="greeting__signature greeting__signature--animate">Jervin &amp; Jarmaine</p>
+
+    <div class="greeting__cta greeting__cta--animate">
+      <app-button variant="primary" size="lg" (clicked)="scrollToRsvp()">
+        RSVP
+      </app-button>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <button
+    class="greeting__scroll"
+    (click)="scrollDown()"
+    aria-label="Scroll to next section"
+  >
+    <i class="uil uil-angle-down"></i>
+  </button>
+
+</section>
