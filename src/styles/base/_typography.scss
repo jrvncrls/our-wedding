@@ -2,19 +2,36 @@
 // BASE TYPOGRAPHY
 // ============================================================
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-primary);
   font-weight: 700;
   color: var(--color-neutral-700);
   line-height: 1.25;
 }
 
-h1 { font-size: clamp(2rem, 5vw, 3rem); }
-h2 { font-size: clamp(1.5rem, 3.5vw, 2rem); }
-h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
-h4 { font-size: 1.25rem; }
-h5 { font-size: 1.125rem; }
-h6 { font-size: 1rem; }
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+h2 {
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+}
+h3 {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+}
+h4 {
+  font-size: 1.25rem;
+}
+h5 {
+  font-size: 1.125rem;
+}
+h6 {
+  font-size: 1rem;
+}
 
 p {
   font-family: var(--font-primary);
@@ -24,8 +41,14 @@ p {
   color: var(--color-neutral-600);
 }
 
-strong, b { font-weight: 700; }
-em, i { font-style: italic; }
+strong,
+b {
+  font-weight: 700;
+}
+em,
+i {
+  font-style: italic;
+}
 
 small {
   font-size: var(--body-sm-regular--size);
@@ -59,7 +82,15 @@ small {
 }
 
 // Utility text colors
-.text-primary  { color: var(--color-primary-500); }
-.text-accent   { color: var(--color-text-500); }
-.text-muted    { color: var(--color-neutral-400); }
-.text-white    { color: var(--color-white); }
+.text-primary {
+  color: var(--color-primary-500);
+}
+.text-accent {
+  color: var(--color-text-500);
+}
+.text-muted {
+  color: var(--color-neutral-400);
+}
+.text-white {
+  color: var(--color-white);
+}

@@ -9,9 +9,9 @@ import { ButtonComponent } from '../button/button.component';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  mobileMenuOpen    = signal(false);
+  mobileMenuOpen = signal(false);
   weddingDropdownOpen = signal(false);
-  scrolled          = signal(false);
+  scrolled = signal(false);
 
   @HostListener('window:scroll')
   onWindowScroll(): void {

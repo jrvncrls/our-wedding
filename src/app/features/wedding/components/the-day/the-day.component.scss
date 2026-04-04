@@ -74,12 +74,7 @@
       flex: 1;
       max-width: 80px;
       height: 1px;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        var(--color-primary-400),
-        transparent
-      );
+      background: linear-gradient(90deg, transparent, var(--color-primary-400), transparent);
     }
 
     &-icon {

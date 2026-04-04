@@ -75,11 +75,7 @@
     flex: 1;
     width: 2px;
     min-height: 2rem;
-    background: linear-gradient(
-      to bottom,
-      var(--color-primary-300),
-      var(--color-primary-200)
-    );
+    background: linear-gradient(to bottom, var(--color-primary-300), var(--color-primary-200));
     margin: 0.25rem 0;
   }
 

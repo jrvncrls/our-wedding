@@ -90,12 +90,7 @@
       left: 0;
       right: 0;
       height: 2px;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        var(--color-primary-400),
-        transparent
-      );
+      background: linear-gradient(90deg, transparent, var(--color-primary-400), transparent);
     }
   }
 

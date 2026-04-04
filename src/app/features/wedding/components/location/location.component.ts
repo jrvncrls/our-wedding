@@ -8,10 +8,10 @@ import { Component } from '@angular/core';
 })
 export class LocationComponent {
   readonly venue = {
-    name:    'The Grand Ballroom',
+    name: 'The Grand Ballroom',
     address: '123 Roxas Boulevard, Malate',
-    city:    'Manila, 1004',
+    city: 'Manila, 1004',
     country: 'Philippines',
-    phone:   '+63 (2) 8XXX-XXXX',
+    phone: '+63 (2) 8XXX-XXXX',
   };
 }

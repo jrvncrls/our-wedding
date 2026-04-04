@@ -30,8 +30,12 @@
   }
 }
 
-.container--narrow { max-width: 768px; }
-.container--wide   { max-width: 1536px; }
+.container--narrow {
+  max-width: 768px;
+}
+.container--wide {
+  max-width: 1536px;
+}
 
 // 4. Section spacing
 .section {
@@ -44,25 +48,46 @@
   }
 }
 
-.section--cream { background-color: var(--color-bg-tint); }
+.section--cream {
+  background-color: var(--color-bg-tint);
+}
 
 // 5. Global keyframes
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes scrollBounce {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(8px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
 }
 
 @keyframes shimmer {
-  0%   { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }

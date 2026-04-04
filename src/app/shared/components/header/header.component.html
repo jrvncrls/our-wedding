@@ -5,16 +5,19 @@
   role="banner"
 >
   <div class="header__inner">
-
     <!-- Logo -->
-    <a class="header__logo" href="#" (click)="scrollTo('home'); $event.preventDefault()" aria-label="Back to top">
+    <a
+      class="header__logo"
+      href="#"
+      (click)="scrollTo('home'); $event.preventDefault()"
+      aria-label="Back to top"
+    >
       <span class="header__logo-text">J<span class="header__logo-amp">&amp;</span>J</span>
     </a>
 
     <!-- Desktop Navigation -->
     <nav class="header__nav" aria-label="Main navigation">
       <ul class="header__nav-list" role="list">
-
         <!-- Wedding dropdown -->
         <li
           class="header__nav-item header__nav-item--has-dropdown"
@@ -65,7 +68,6 @@
         <li class="header__nav-item">
           <button class="header__nav-link" (click)="scrollTo('countdown')">Our Story</button>
         </li>
-
       </ul>
     </nav>
 
@@ -87,7 +89,6 @@
       <span class="header__bar"></span>
       <span class="header__bar"></span>
     </button>
-
   </div>
 
   <!-- Mobile Menu -->
@@ -101,18 +102,27 @@
   >
     <nav aria-label="Mobile navigation">
       <ul class="header__mobile-list" role="list">
-        <li><button class="header__mobile-link" (click)="scrollTo('timeline')">Timeline</button></li>
-        <li><button class="header__mobile-link" (click)="scrollTo('location')">Location</button></li>
-        <li><button class="header__mobile-link" (click)="scrollTo('dress-code')">Dress Code</button></li>
+        <li>
+          <button class="header__mobile-link" (click)="scrollTo('timeline')">Timeline</button>
+        </li>
+        <li>
+          <button class="header__mobile-link" (click)="scrollTo('location')">Location</button>
+        </li>
+        <li>
+          <button class="header__mobile-link" (click)="scrollTo('dress-code')">Dress Code</button>
+        </li>
         <li><button class="header__mobile-link" (click)="scrollTo('gifts')">Registry</button></li>
         <li><button class="header__mobile-link" (click)="scrollTo('gallery')">Gallery</button></li>
-        <li><button class="header__mobile-link" (click)="scrollTo('countdown')">Our Story</button></li>
+        <li>
+          <button class="header__mobile-link" (click)="scrollTo('countdown')">Our Story</button>
+        </li>
       </ul>
     </nav>
 
     <div class="header__mobile-cta">
-      <app-button variant="primary" [fullWidth]="true" (clicked)="scrollTo('rsvp')">RSVP Now</app-button>
+      <app-button variant="primary" [fullWidth]="true" (clicked)="scrollTo('rsvp')"
+        >RSVP Now</app-button
+      >
     </div>
   </div>
-
 </header>

@@ -16,10 +16,22 @@ export interface GalleryImage {
 export class GalleryComponent implements OnInit, OnDestroy {
   // Replace these paths with actual wedding photos in public/assets/gallery/
   readonly images: GalleryImage[] = [
-    { src: 'assets/gallery/photo-1.jpg', alt: 'Jervin and Jarmaine — engagement shoot', caption: 'The moment we knew' },
+    {
+      src: 'assets/gallery/photo-1.jpg',
+      alt: 'Jervin and Jarmaine — engagement shoot',
+      caption: 'The moment we knew',
+    },
     { src: 'assets/gallery/photo-2.jpg', alt: 'Couple at the beach', caption: 'Our first getaway' },
-    { src: 'assets/gallery/photo-3.jpg', alt: 'Engagement photo', caption: 'He asked, she said yes' },
-    { src: 'assets/gallery/photo-4.jpg', alt: 'Couple at sunset', caption: 'Golden hour, golden hearts' },
+    {
+      src: 'assets/gallery/photo-3.jpg',
+      alt: 'Engagement photo',
+      caption: 'He asked, she said yes',
+    },
+    {
+      src: 'assets/gallery/photo-4.jpg',
+      alt: 'Couple at sunset',
+      caption: 'Golden hour, golden hearts',
+    },
     { src: 'assets/gallery/photo-5.jpg', alt: 'Pre-wedding shoot', caption: 'Forever starts here' },
   ];
 
@@ -29,7 +41,7 @@ export class GalleryComponent implements OnInit, OnDestroy {
 
   activeImage = computed(() => this.images[this.currentIndex()]);
   isFirst = computed(() => this.currentIndex() === 0);
-  isLast  = computed(() => this.currentIndex() === this.images.length - 1);
+  isLast = computed(() => this.currentIndex() === this.images.length - 1);
 
   ngOnInit(): void {
     this.startAutoPlay();

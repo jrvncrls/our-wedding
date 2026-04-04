@@ -88,9 +88,19 @@
       font-size: 1.0625rem;
     }
 
-    &--animate-1 { animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: 0.45s; }
-    &--animate-2 { animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: 0.6s; }
-    &--animate-3 { animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: 0.75s; margin-bottom: 2.5rem; }
+    &--animate-1 {
+      animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-delay: 0.45s;
+    }
+    &--animate-2 {
+      animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-delay: 0.6s;
+    }
+    &--animate-3 {
+      animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-delay: 0.75s;
+      margin-bottom: 2.5rem;
+    }
   }
 
   &__regards {
@@ -109,7 +119,10 @@
     color: var(--color-primary-300);
     margin-bottom: 0.25rem;
 
-    &--animate { animation: fadeIn 1s ease both; animation-delay: 0.9s; }
+    &--animate {
+      animation: fadeIn 1s ease both;
+      animation-delay: 0.9s;
+    }
   }
 
   &__signature {
@@ -118,14 +131,20 @@
     color: var(--color-white);
     margin-bottom: 2rem;
 
-    &--animate { animation: fadeIn 1s ease both; animation-delay: 1s; }
+    &--animate {
+      animation: fadeIn 1s ease both;
+      animation-delay: 1s;
+    }
   }
 
   &__cta {
     display: flex;
     justify-content: center;
 
-    &--animate { animation: fadeIn 1s ease both; animation-delay: 1.1s; }
+    &--animate {
+      animation: fadeIn 1s ease both;
+      animation-delay: 1.1s;
+    }
   }
 
   // ── Scroll indicator ─────────────────────────────────────

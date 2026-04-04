@@ -1,7 +1,6 @@
 @use 'abstracts/mixins' as m;
 
 .getting-there {
-
   &__header {
     text-align: center;
     margin-bottom: var(--space-12);
@@ -36,7 +35,9 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
-    transition: box-shadow var(--transition-base), transform var(--transition-base);
+    transition:
+      box-shadow var(--transition-base),
+      transform var(--transition-base);
 
     &:hover {
       box-shadow: var(--shadow-md);

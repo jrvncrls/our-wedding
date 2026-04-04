@@ -1,7 +1,6 @@
 @use 'abstracts/mixins' as m;
 
 .dress-code {
-
   &__header {
     text-align: center;
     margin-bottom: var(--space-10);
@@ -47,7 +46,10 @@
     text-transform: uppercase;
     color: var(--color-text-600);
 
-    i { font-size: 1rem; color: var(--color-primary-500); }
+    i {
+      font-size: 1rem;
+      color: var(--color-primary-500);
+    }
   }
 
   &__description {
@@ -80,14 +82,18 @@
       background: var(--color-primary-50);
       border: 1px solid var(--color-primary-200);
 
-      .dress-code__guideline-header i { color: var(--color-primary-600); }
+      .dress-code__guideline-header i {
+        color: var(--color-primary-600);
+      }
     }
 
     &--dont {
       background: hsla(0, 40%, 97%, 1);
       border: 1px solid hsla(0, 30%, 88%, 1);
 
-      .dress-code__guideline-header i { color: hsla(0, 55%, 55%, 1); }
+      .dress-code__guideline-header i {
+        color: hsla(0, 55%, 55%, 1);
+      }
     }
 
     &-header {
@@ -96,7 +102,9 @@
       gap: 0.5rem;
       margin-bottom: 0.875rem;
 
-      i { font-size: 1.25rem; }
+      i {
+        font-size: 1.25rem;
+      }
 
       strong {
         font-family: var(--font-primary);

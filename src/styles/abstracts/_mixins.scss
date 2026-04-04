@@ -5,10 +5,10 @@
 // ============================================================
 
 $breakpoints: (
-  'sm':  640px,
-  'md':  768px,
-  'lg':  1024px,
-  'xl':  1280px,
+  'sm': 640px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1280px,
   '2xl': 1536px,
 );
 
@@ -42,119 +42,119 @@ $breakpoints: (
 
 @mixin body-sm-regular {
   font-family: var(--body-sm-regular--family);
-  font-size:   var(--body-sm-regular--size);
+  font-size: var(--body-sm-regular--size);
   font-weight: var(--body-sm-regular--weight);
   line-height: var(--body-sm-regular--lh);
 }
 
 @mixin body-sm-medium {
   font-family: var(--body-sm-medium--family);
-  font-size:   var(--body-sm-medium--size);
+  font-size: var(--body-sm-medium--size);
   font-weight: var(--body-sm-medium--weight);
   line-height: var(--body-sm-medium--lh);
 }
 
 @mixin body-md-regular {
   font-family: var(--body-md-regular--family);
-  font-size:   var(--body-md-regular--size);
+  font-size: var(--body-md-regular--size);
   font-weight: var(--body-md-regular--weight);
   line-height: var(--body-md-regular--lh);
 }
 
 @mixin body-md-medium {
   font-family: var(--body-md-medium--family);
-  font-size:   var(--body-md-medium--size);
+  font-size: var(--body-md-medium--size);
   font-weight: var(--body-md-medium--weight);
   line-height: var(--body-md-medium--lh);
 }
 
 @mixin body-md-semibold {
   font-family: var(--body-md-semibold--family);
-  font-size:   var(--body-md-semibold--size);
+  font-size: var(--body-md-semibold--size);
   font-weight: var(--body-md-semibold--weight);
   line-height: var(--body-md-semibold--lh);
 }
 
 @mixin body-lg-regular {
   font-family: var(--body-lg-regular--family);
-  font-size:   var(--body-lg-regular--size);
+  font-size: var(--body-lg-regular--size);
   font-weight: var(--body-lg-regular--weight);
   line-height: var(--body-lg-regular--lh);
 }
 
 @mixin body-lg-semibold {
   font-family: var(--body-lg-semibold--family);
-  font-size:   var(--body-lg-semibold--size);
+  font-size: var(--body-lg-semibold--size);
   font-weight: var(--body-lg-semibold--weight);
   line-height: var(--body-lg-semibold--lh);
 }
 
 @mixin heading-sm-bold {
   font-family: var(--heading-sm-bold--family);
-  font-size:   var(--heading-sm-bold--size);
+  font-size: var(--heading-sm-bold--size);
   font-weight: var(--heading-sm-bold--weight);
   line-height: var(--heading-sm-bold--lh);
 }
 
 @mixin heading-md-bold {
   font-family: var(--heading-md-bold--family);
-  font-size:   var(--heading-md-bold--size);
+  font-size: var(--heading-md-bold--size);
   font-weight: var(--heading-md-bold--weight);
   line-height: var(--heading-md-bold--lh);
 }
 
 @mixin heading-lg-bold {
   font-family: var(--heading-lg-bold--family);
-  font-size:   var(--heading-lg-bold--size);
+  font-size: var(--heading-lg-bold--size);
   font-weight: var(--heading-lg-bold--weight);
   line-height: var(--heading-lg-bold--lh);
 }
 
 @mixin heading-xl-bold {
   font-family: var(--heading-xl-bold--family);
-  font-size:   var(--heading-xl-bold--size);
+  font-size: var(--heading-xl-bold--size);
   font-weight: var(--heading-xl-bold--weight);
   line-height: var(--heading-xl-bold--lh);
 }
 
 @mixin display-sm {
   font-family: var(--display-sm--family);
-  font-size:   var(--display-sm--size);
+  font-size: var(--display-sm--size);
   font-weight: var(--display-sm--weight);
   line-height: var(--display-sm--lh);
 }
 
 @mixin display-md {
   font-family: var(--display-md--family);
-  font-size:   var(--display-md--size);
+  font-size: var(--display-md--size);
   font-weight: var(--display-md--weight);
   line-height: var(--display-md--lh);
 }
 
 @mixin display-lg {
   font-family: var(--display-lg--family);
-  font-size:   var(--display-lg--size);
+  font-size: var(--display-lg--size);
   font-weight: var(--display-lg--weight);
   line-height: var(--display-lg--lh);
 }
 
 @mixin cursive-md {
   font-family: var(--cursive-md--family);
-  font-size:   var(--cursive-md--size);
+  font-size: var(--cursive-md--size);
   font-weight: var(--cursive-md--weight);
   line-height: var(--cursive-md--lh);
 }
 
 @mixin cursive-lg {
   font-family: var(--cursive-lg--family);
-  font-size:   var(--cursive-lg--size);
+  font-size: var(--cursive-lg--size);
   font-weight: var(--cursive-lg--weight);
   line-height: var(--cursive-lg--lh);
 }
 
 @mixin cursive-xl {
   font-family: var(--cursive-xl--family);
-  font-size:   var(--cursive-xl--size);
+  font-size: var(--cursive-xl--size);
   font-weight: var(--cursive-xl--weight);
   line-height: var(--cursive-xl--lh);
 }

@@ -1,7 +1,6 @@
 @use 'abstracts/mixins' as m;
 
 .gallery {
-
   &__header {
     text-align: center;
     margin-bottom: var(--space-12);
@@ -136,10 +135,17 @@
       transform: translateY(-50%) scale(0.95);
     }
 
-    i { font-size: 1.5rem; line-height: 1; }
+    i {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
 
-    &--prev { left: 1rem; }
-    &--next { right: 1rem; }
+    &--prev {
+      left: 1rem;
+    }
+    &--next {
+      right: 1rem;
+    }
 
     @include m.from(md) {
       width: 3.25rem;

@@ -17,16 +17,8 @@
     position: absolute;
     inset: 0;
     background-image:
-      radial-gradient(
-        circle at 20% 80%,
-        hsla(36, 60%, 70%, 0.08) 0%,
-        transparent 50%
-      ),
-      radial-gradient(
-        circle at 80% 20%,
-        hsla(36, 40%, 60%, 0.06) 0%,
-        transparent 50%
-      );
+      radial-gradient(circle at 20% 80%, hsla(36, 60%, 70%, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsla(36, 40%, 60%, 0.06) 0%, transparent 50%);
     pointer-events: none;
   }
 
@@ -128,10 +120,14 @@
     font-size: 0.9375rem;
     font-weight: 400;
     color: var(--color-white);
-    transition: border-color var(--transition-fast), background var(--transition-fast);
+    transition:
+      border-color var(--transition-fast),
+      background var(--transition-fast);
     appearance: none;
 
-    &::placeholder { color: hsla(0, 0%, 100%, 0.35); }
+    &::placeholder {
+      color: hsla(0, 0%, 100%, 0.35);
+    }
 
     &:focus {
       outline: none;
@@ -162,7 +158,9 @@
     font-size: 0.8125rem;
     color: hsla(0, 80%, 75%, 1);
 
-    i { font-size: 1rem; }
+    i {
+      font-size: 1rem;
+    }
   }
 
   // ── Radio group ──────────────────────────────────────────
@@ -314,11 +312,17 @@
     text-underline-offset: 3px;
     transition: color var(--transition-fast);
 
-    &:hover { color: hsla(0, 0%, 100%, 0.8); }
+    &:hover {
+      color: hsla(0, 0%, 100%, 0.8);
+    }
   }
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

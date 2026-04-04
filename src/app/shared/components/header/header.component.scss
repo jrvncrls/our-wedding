@@ -20,7 +20,9 @@
     background: hsla(0, 0%, 100%, 0.96);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    box-shadow: 0 1px 0 var(--color-primary-200), var(--shadow-sm);
+    box-shadow:
+      0 1px 0 var(--color-primary-200),
+      var(--shadow-sm);
 
     .header__logo-text {
       color: var(--color-neutral-700);
@@ -233,9 +235,16 @@
 
   // Hamburger → X animation
   .header__hamburger--open {
-    .header__bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .header__bar:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    .header__bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .header__bar:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .header__bar:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    .header__bar:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
   }
 
   // ── Mobile Menu ──────────────────────────────────────────
