@@ -12,16 +12,15 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  color: var(--color-primary-500);
 
   h1 {
     font-family: var(--font-cursive);
-    color: var(--color-primary-500) !important;
+    color: var(--color-text-500) !important;
   }
 
   p {
     font: var(--cursive-md-regular);
-    color: var(--color-primary-500);
+    color: var(--color-text-500);
 
     @include m.from(lg) {
       font: var(--cursive-lg-regular);
@@ -148,35 +147,6 @@
     &--animate {
       animation: fadeIn 1s ease both;
       animation-delay: 1.1s;
-    }
-  }
-
-  // ── Scroll indicator ─────────────────────────────────────
-
-  &__scroll {
-    position: absolute;
-    bottom: var(--space-8);
-    left: 48.5%;
-    transform: translateX(-50%);
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: var(--space-10);
-    height: var(--space-10);
-    background: color-mix(in srgb, var(--color-primary-500) 12%, transparent);
-    border: 1px solid color-mix(in srgb, var(--color-primary-500) 20%, transparent);
-    border-radius: var(--radius-full);
-    cursor: pointer;
-    transition: background var(--transition-fast);
-    animation: scrollBounce 2.5s ease-in-out infinite;
-
-    i {
-      font-size: var(--space-6);
-    }
-
-    &:hover {
-      background: color-mix(in srgb, var(--color-primary-500) 22%, transparent);
     }
   }
 }

@@ -17,12 +17,4 @@ export class GreetingComponent {
       window.scrollTo({ top, behavior: 'smooth' });
     }
   }
-
-  scrollDown(): void {
-    const el = document.getElementById('countdown');
-    if (el) {
-      const top = el.getBoundingClientRect().top + window.scrollY - 80;
-      window.scrollTo({ top, behavior: 'smooth' });
-    }
-  }
 }
