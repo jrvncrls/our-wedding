@@ -9,10 +9,10 @@
     <a
       class="header__logo"
       href="#"
-      (click)="scrollTo('home'); $event.preventDefault()"
+      (click)="scrollTo('wedding'); $event.preventDefault()"
       aria-label="Back to top"
     >
-      <span class="header__logo-text">J<span class="header__logo-amp">&amp;</span>J</span>
+      <img class="header__logo-img" src="logo_jj.png" alt="J & J" />
     </a>
 
     <!-- Desktop Navigation -->
@@ -26,6 +26,9 @@
         >
           <button
             class="header__nav-link"
+            [class.header__nav-link--active]="
+              ['wedding', 'timeline', 'location', 'dress-code', 'gifts'].includes(activeSection())
+            "
             [attr.aria-expanded]="weddingDropdownOpen()"
             aria-haspopup="true"
           >
@@ -50,7 +53,7 @@
             </li>
             <li>
               <button class="header__dropdown-link" (click)="scrollTo('dress-code')">
-                <i class="uil uil-shirt"></i> Dress Code
+                <i class="uil uil-swatchbook"></i> Dress Code
               </button>
             </li>
             <li>
@@ -62,11 +65,23 @@
         </li>
 
         <li class="header__nav-item">
-          <button class="header__nav-link" (click)="scrollTo('gallery')">Gallery</button>
+          <button
+            class="header__nav-link"
+            [class.header__nav-link--active]="activeSection() === 'gallery'"
+            (click)="scrollTo('gallery')"
+          >
+            Gallery
+          </button>
         </li>
 
         <li class="header__nav-item">
-          <button class="header__nav-link" (click)="scrollTo('countdown')">Our Story</button>
+          <button
+            class="header__nav-link"
+            [class.header__nav-link--active]="activeSection() === 'countdown'"
+            (click)="scrollTo('countdown')"
+          >
+            Our Story
+          </button>
         </li>
       </ul>
     </nav>
@@ -101,20 +116,66 @@
     [attr.aria-hidden]="!mobileMenuOpen()"
   >
     <nav aria-label="Mobile navigation">
-      <ul class="header__mobile-list" role="list">
-        <li>
-          <button class="header__mobile-link" (click)="scrollTo('timeline')">Timeline</button>
+      <ul class="header__nav-list header__nav-list--mobile" role="list">
+        <li class="header__nav-item header__mobile-accordion">
+          <button
+            class="header__nav-link"
+            [class.header__nav-link--active]="
+              ['wedding', 'timeline', 'location', 'dress-code', 'gifts'].includes(activeSection())
+            "
+            (click)="toggleMobileWedding()"
+          >
+            Wedding
+            <i
+              class="uil header__nav-chevron"
+              [class.uil-angle-up]="mobileWeddingOpen()"
+              [class.uil-angle-down]="!mobileWeddingOpen()"
+            ></i>
+          </button>
+          <ul
+            class="header__mobile-accordion-list"
+            [class.header__mobile-accordion-list--open]="mobileWeddingOpen()"
+            role="list"
+          >
+            <li>
+              <button class="header__dropdown-link" (click)="scrollTo('timeline')">
+                <i class="uil uil-schedule"></i> Timeline
+              </button>
+            </li>
+            <li>
+              <button class="header__dropdown-link" (click)="scrollTo('location')">
+                <i class="uil uil-map-marker"></i> Location
+              </button>
+            </li>
+            <li>
+              <button class="header__dropdown-link" (click)="scrollTo('dress-code')">
+                <i class="uil uil-swatchbook"></i> Dress Code
+              </button>
+            </li>
+            <li>
+              <button class="header__dropdown-link" (click)="scrollTo('gifts')">
+                <i class="uil uil-gift"></i> Registry
+              </button>
+            </li>
+          </ul>
         </li>
-        <li>
-          <button class="header__mobile-link" (click)="scrollTo('location')">Location</button>
+        <li class="header__nav-item">
+          <button
+            class="header__nav-link"
+            [class.header__nav-link--active]="activeSection() === 'gallery'"
+            (click)="scrollTo('gallery')"
+          >
+            Gallery
+          </button>
         </li>
-        <li>
-          <button class="header__mobile-link" (click)="scrollTo('dress-code')">Dress Code</button>
-        </li>
-        <li><button class="header__mobile-link" (click)="scrollTo('gifts')">Registry</button></li>
-        <li><button class="header__mobile-link" (click)="scrollTo('gallery')">Gallery</button></li>
-        <li>
-          <button class="header__mobile-link" (click)="scrollTo('countdown')">Our Story</button>
+        <li class="header__nav-item">
+          <button
+            class="header__nav-link"
+            [class.header__nav-link--active]="activeSection() === 'countdown'"
+            (click)="scrollTo('countdown')"
+          >
+            Our Story
+          </button>
         </li>
       </ul>
     </nav>

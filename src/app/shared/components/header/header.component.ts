@@ -1,4 +1,4 @@
-import { Component, HostListener, signal } from '@angular/core';
+import { Component, HostListener, OnInit, OnDestroy, signal } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 
 @Component({
@@ -8,10 +8,36 @@ import { ButtonComponent } from '../button/button.component';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit, OnDestroy {
   mobileMenuOpen = signal(false);
   weddingDropdownOpen = signal(false);
+  mobileWeddingOpen = signal(false);
   scrolled = signal(false);
+  activeSection = signal('wedding');
+
+  private observer!: IntersectionObserver;
+
+  ngOnInit(): void {
+    const sections = ['wedding', 'countdown', 'gallery', 'timeline', 'location', 'dress-code', 'gifts', 'rsvp'];
+    this.observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            this.activeSection.set(entry.target.id);
+          }
+        }
+      },
+      { threshold: 0.4 }
+    );
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) this.observer.observe(el);
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.observer?.disconnect();
+  }
 
   @HostListener('window:scroll')
   onWindowScroll(): void {
@@ -24,6 +50,11 @@ export class HeaderComponent {
 
   closeMobileMenu(): void {
     this.mobileMenuOpen.set(false);
+    this.mobileWeddingOpen.set(false);
+  }
+
+  toggleMobileWedding(): void {
+    this.mobileWeddingOpen.update((open) => !open);
   }
 
   openWeddingDropdown(): void {
