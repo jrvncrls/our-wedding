@@ -5,86 +5,88 @@
   role="banner"
 >
   <div class="header__inner">
-    <!-- Logo -->
-    <a
-      class="header__logo"
-      href="#"
-      (click)="scrollTo('wedding'); $event.preventDefault()"
-      aria-label="Back to top"
-    >
-      <img class="header__logo-img" src="logo_jj.png" alt="J & J" />
-    </a>
+    <div class="left">
+      <!-- Logo -->
+      <a
+        class="header__logo"
+        href="#"
+        (click)="scrollTo('wedding'); $event.preventDefault()"
+        aria-label="Back to top"
+      >
+        <img class="header__logo-img" src="logo_jj.png" alt="J & J" />
+      </a>
 
-    <!-- Desktop Navigation -->
-    <nav class="header__nav" aria-label="Main navigation">
-      <ul class="header__nav-list" role="list">
-        <!-- Wedding dropdown -->
-        <li
-          class="header__nav-item header__nav-item--has-dropdown"
-          (mouseenter)="openWeddingDropdown()"
-          (mouseleave)="closeWeddingDropdown()"
-        >
-          <button
-            class="header__nav-link"
-            [class.header__nav-link--active]="
-              ['wedding', 'timeline', 'location', 'dress-code', 'gifts'].includes(activeSection())
-            "
-            [attr.aria-expanded]="weddingDropdownOpen()"
-            aria-haspopup="true"
+      <!-- Desktop Navigation -->
+      <nav class="header__nav" aria-label="Main navigation">
+        <ul class="header__nav-list" role="list">
+          <!-- Wedding dropdown -->
+          <li
+            class="header__nav-item header__nav-item--has-dropdown"
+            (mouseenter)="openWeddingDropdown()"
+            (mouseleave)="closeWeddingDropdown()"
           >
-            Wedding <i class="uil uil-angle-down header__nav-chevron"></i>
-          </button>
+            <button
+              class="header__nav-link"
+              [class.header__nav-link--active]="
+                ['wedding', 'timeline', 'location', 'dress-code', 'gifts'].includes(activeSection())
+              "
+              [attr.aria-expanded]="weddingDropdownOpen()"
+              aria-haspopup="true"
+            >
+              Wedding <i class="uil uil-angle-down header__nav-chevron"></i>
+            </button>
 
-          <ul
-            class="header__dropdown"
-            [class.header__dropdown--visible]="weddingDropdownOpen()"
-            role="list"
-            aria-label="Wedding submenu"
-          >
-            <li>
-              <button class="header__dropdown-link" (click)="scrollTo('timeline')">
-                <i class="uil uil-schedule"></i> Timeline
-              </button>
-            </li>
-            <li>
-              <button class="header__dropdown-link" (click)="scrollTo('location')">
-                <i class="uil uil-map-marker"></i> Location
-              </button>
-            </li>
-            <li>
-              <button class="header__dropdown-link" (click)="scrollTo('dress-code')">
-                <i class="uil uil-swatchbook"></i> Dress Code
-              </button>
-            </li>
-            <li>
-              <button class="header__dropdown-link" (click)="scrollTo('gifts')">
-                <i class="uil uil-gift"></i> Registry
-              </button>
-            </li>
-          </ul>
-        </li>
+            <ul
+              class="header__dropdown"
+              [class.header__dropdown--visible]="weddingDropdownOpen()"
+              role="list"
+              aria-label="Wedding submenu"
+            >
+              <li>
+                <button class="header__dropdown-link" (click)="scrollTo('timeline')">
+                  <i class="uil uil-schedule"></i> Timeline
+                </button>
+              </li>
+              <li>
+                <button class="header__dropdown-link" (click)="scrollTo('location')">
+                  <i class="uil uil-map-marker"></i> Location
+                </button>
+              </li>
+              <li>
+                <button class="header__dropdown-link" (click)="scrollTo('dress-code')">
+                  <i class="uil uil-swatchbook"></i> Dress Code
+                </button>
+              </li>
+              <li>
+                <button class="header__dropdown-link" (click)="scrollTo('gifts')">
+                  <i class="uil uil-gift"></i> Registry
+                </button>
+              </li>
+            </ul>
+          </li>
 
-        <li class="header__nav-item">
-          <button
-            class="header__nav-link"
-            [class.header__nav-link--active]="activeSection() === 'gallery'"
-            (click)="scrollTo('gallery')"
-          >
-            Gallery
-          </button>
-        </li>
+          <li class="header__nav-item">
+            <button
+              class="header__nav-link"
+              [class.header__nav-link--active]="activeSection() === 'gallery'"
+              (click)="scrollTo('gallery')"
+            >
+              Gallery
+            </button>
+          </li>
 
-        <li class="header__nav-item">
-          <button
-            class="header__nav-link"
-            [class.header__nav-link--active]="activeSection() === 'countdown'"
-            (click)="scrollTo('countdown')"
-          >
-            Our Story
-          </button>
-        </li>
-      </ul>
-    </nav>
+          <li class="header__nav-item">
+            <button
+              class="header__nav-link"
+              [class.header__nav-link--active]="activeSection() === 'countdown'"
+              (click)="scrollTo('countdown')"
+            >
+              Our Story
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
 
     <!-- Desktop CTA -->
     <div class="header__cta">

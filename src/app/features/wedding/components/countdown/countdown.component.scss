@@ -4,142 +4,50 @@
   text-align: center;
 
   &__header {
-    margin-bottom: var(--space-12);
+    margin-bottom: var(--space-8);
 
     @include m.from(md) {
-      margin-bottom: var(--space-16);
-    }
-  }
-
-  &__title {
-    font-family: var(--font-display);
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
-    font-weight: 400;
-    color: var(--color-text-600);
-    margin-bottom: 0.75rem;
-  }
-
-  &__subtitle {
-    font-family: var(--font-primary);
-    font-size: 0.9375rem;
-    color: var(--color-neutral-500);
-    margin-bottom: 0.25rem;
-  }
-
-  &__date {
-    font-family: var(--font-cursive);
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    color: var(--color-primary-600);
-  }
-
-  // ── Countdown grid ───────────────────────────────────────
-
-  &__grid {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    margin-bottom: var(--space-12);
-
-    @include m.from(sm) {
-      gap: 1rem;
+      margin-bottom: var(--space-12);
     }
 
-    @include m.from(md) {
-      gap: 1.5rem;
+    h2 {
+      font: var(--display-md-regular);
+      color: var(--color-text-600);
     }
   }
+}
 
-  &__unit {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.625rem;
+.countdown-container {
+  display: flex;
+  justify-content: center;
+}
+
+.timer {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-4);
+
+  @include m.from(md) {
+    gap: var(--space-8);
   }
+}
 
-  &__card {
-    width: 4.5rem;
-    height: 5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--color-white);
-    border: 1px solid var(--color-primary-200);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-sm);
-    position: relative;
-    overflow: hidden;
+.time-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: var(--space-2);
 
-    @include m.from(sm) {
-      width: 5.5rem;
-      height: 6rem;
-    }
-
-    @include m.from(md) {
-      width: 7rem;
-      height: 7.5rem;
-      border-radius: var(--radius-xl);
-    }
-
-    // Subtle top highlight
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--color-primary-400), transparent);
-    }
-  }
-
-  &__number {
-    font-family: var(--font-display);
-    font-size: clamp(1.75rem, 4vw, 3rem);
-    font-weight: 600;
-    color: var(--color-text-500);
-    line-height: 1;
-    letter-spacing: -0.02em;
-  }
-
-  &__label {
-    font-family: var(--font-primary);
-    font-size: 0.6875rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--color-neutral-400);
-  }
-
-  &__separator {
-    font-family: var(--font-display);
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
-    color: var(--color-primary-400);
-    line-height: 1;
-    margin-top: -1.25rem;
+  .number {
+    font: var(--heading-xl-regular) var(--font-primary);
     font-weight: 300;
+    color: var(--color-text-500);
+    letter-spacing: 0.12em;
   }
 
-  // ── Bottom ornament ──────────────────────────────────────
-
-  &__ornament {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.25rem;
-    color: var(--color-primary-400);
-    font-size: 1.125rem;
-
-    &-line {
-      display: block;
-      width: 3rem;
-      height: 1px;
-      background: var(--color-primary-300);
-
-      @include m.from(md) {
-        width: 5rem;
-      }
-    }
+  .label {
+    font: var(--body-sm-regular) var(--font-primary);
+    letter-spacing: 0.12em;
+    color: var(--color-text-500);
   }
 }

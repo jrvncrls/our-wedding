@@ -1,52 +1,28 @@
 <section class="countdown section section--cream" id="countdown" aria-label="Countdown to wedding">
   <div class="container">
     <div class="countdown__header">
-      <span class="eyebrow">Counting down</span>
-      <h2 class="countdown__title">The Big Day Is Almost Here</h2>
-      <p class="countdown__subtitle">Join us as we celebrate our love on</p>
-      <p class="countdown__date">December 22, 2026</p>
+      <h2>Countdown</h2>
     </div>
 
-    <div class="countdown__grid" aria-live="polite" aria-atomic="true">
-      <div class="countdown__unit">
-        <div class="countdown__card">
-          <span class="countdown__number">{{ pad(countdown().days) }}</span>
+    <div class="countdown-container">
+      <div class="timer" aria-live="polite" aria-atomic="true">
+        <div class="time-unit">
+          <span class="number">{{ pad(countdown().days) }}</span>
+          <span class="label">Days</span>
         </div>
-        <span class="countdown__label">Days</span>
-      </div>
-
-      <span class="countdown__separator" aria-hidden="true">:</span>
-
-      <div class="countdown__unit">
-        <div class="countdown__card">
-          <span class="countdown__number">{{ pad(countdown().hours) }}</span>
+        <div class="time-unit">
+          <span class="number">{{ pad(countdown().hours) }}</span>
+          <span class="label">Hours</span>
         </div>
-        <span class="countdown__label">Hours</span>
-      </div>
-
-      <span class="countdown__separator" aria-hidden="true">:</span>
-
-      <div class="countdown__unit">
-        <div class="countdown__card">
-          <span class="countdown__number">{{ pad(countdown().minutes) }}</span>
+        <div class="time-unit">
+          <span class="number">{{ pad(countdown().minutes) }}</span>
+          <span class="label">Minutes</span>
         </div>
-        <span class="countdown__label">Minutes</span>
-      </div>
-
-      <span class="countdown__separator" aria-hidden="true">:</span>
-
-      <div class="countdown__unit">
-        <div class="countdown__card">
-          <span class="countdown__number">{{ pad(countdown().seconds) }}</span>
+        <div class="time-unit">
+          <span class="number">{{ pad(countdown().seconds) }}</span>
+          <span class="label">Seconds</span>
         </div>
-        <span class="countdown__label">Seconds</span>
       </div>
-    </div>
-
-    <div class="countdown__ornament" aria-hidden="true">
-      <span class="countdown__ornament-line"></span>
-      <i class="uil uil-heart"></i>
-      <span class="countdown__ornament-line"></span>
     </div>
   </div>
 </section>

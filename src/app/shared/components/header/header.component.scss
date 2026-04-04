@@ -64,6 +64,11 @@
     @include m.from(xl) {
       padding: 0.5rem 2.5rem;
     }
+
+    .left {
+      display: flex;
+      gap: 2rem;
+    }
   }
 
   // ── Logo ─────────────────────────────────────────────────
