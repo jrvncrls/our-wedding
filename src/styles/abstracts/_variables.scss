@@ -8,104 +8,48 @@
   // Font Families
   // ----------------------------------------------------------
   --font-primary: 'Montserrat', sans-serif;
-  --font-cursive: 'Italiana', cursive;
+  --font-cursive: 'Italianno', cursive;
   --font-display: 'Playfair Display', serif;
 
   // ----------------------------------------------------------
   // Typography Tokens
-  // Each token exposes: family, size, weight, line-height
+  // Usage: font: var(--body-md-regular) var(--font-primary);
+  // Format: weight size/line-height  (family appended at usage)
   // ----------------------------------------------------------
 
-  // Body — Small
-  --body-sm-regular--family: var(--font-primary);
-  --body-sm-regular--size: 0.875rem; // 14px
-  --body-sm-regular--weight: 400;
-  --body-sm-regular--lh: 1.5;
+  // Body — Small (14px)
+  --body-sm-regular: 400 0.875rem/1.5;
+  --body-sm-medium: 500 0.875rem/1.5;
 
-  --body-sm-medium--family: var(--font-primary);
-  --body-sm-medium--size: 0.875rem;
-  --body-sm-medium--weight: 500;
-  --body-sm-medium--lh: 1.5;
+  // Body — Base (16px)
+  --body-md-regular: 400 1rem/1.65;
+  --body-md-medium: 500 1rem/1.65;
+  --body-md-semibold: 600 1rem/1.65;
 
-  // Body — Base
-  --body-md-regular--family: var(--font-primary);
-  --body-md-regular--size: 1rem; // 16px
-  --body-md-regular--weight: 400;
-  --body-md-regular--lh: 1.65;
+  // Body — Large (20px)
+  --body-lg-regular: 400 1.25rem/1.7;
+  --body-lg-semibold: 600 1.25rem/1.7;
 
-  --body-md-medium--family: var(--font-primary);
-  --body-md-medium--size: 1rem;
-  --body-md-medium--weight: 500;
-  --body-md-medium--lh: 1.65;
-
-  --body-md-semibold--family: var(--font-primary);
-  --body-md-semibold--size: 1rem;
-  --body-md-semibold--weight: 600;
-  --body-md-semibold--lh: 1.65;
-
-  // Body — Large
-  --body-lg-regular--family: var(--font-primary);
-  --body-lg-regular--size: 1.125rem; // 18px
-  --body-lg-regular--weight: 400;
-  --body-lg-regular--lh: 1.7;
-
-  --body-lg-semibold--family: var(--font-primary);
-  --body-lg-semibold--size: 1.125rem;
-  --body-lg-semibold--weight: 600;
-  --body-lg-semibold--lh: 1.7;
+  // Body — XL (24px)
+  --body-xl-regular: 400 1.5rem/1.6;
+  --body-xl-semibold: 600 1.5rem/1.6;
 
   // Headings
-  --heading-sm-bold--family: var(--font-primary);
-  --heading-sm-bold--size: 1.25rem; // 20px
-  --heading-sm-bold--weight: 700;
-  --heading-sm-bold--lh: 1.35;
-
-  --heading-md-bold--family: var(--font-primary);
-  --heading-md-bold--size: 1.5rem; // 24px
-  --heading-md-bold--weight: 700;
-  --heading-md-bold--lh: 1.3;
-
-  --heading-lg-bold--family: var(--font-primary);
-  --heading-lg-bold--size: 2rem; // 32px
-  --heading-lg-bold--weight: 700;
-  --heading-lg-bold--lh: 1.25;
-
-  --heading-xl-bold--family: var(--font-primary);
-  --heading-xl-bold--size: 2.5rem; // 40px
-  --heading-xl-bold--weight: 700;
-  --heading-xl-bold--lh: 1.2;
+  --heading-sm-bold: 700 1.25rem/1.35; // 20px
+  --heading-md-bold: 700 1.5rem/1.3; // 24px
+  --heading-lg-bold: 700 2rem/1.25; // 32px
+  --heading-xl-bold: 700 2.5rem/1.2; // 40px
 
   // Display (Playfair Display)
-  --display-sm--family: var(--font-display);
-  --display-sm--size: 3rem; // 48px
-  --display-sm--weight: 400;
-  --display-sm--lh: 1.15;
+  --display-sm-regular: 400 3rem/1.15 var(--font-display); // 48px
+  --display-md-regular: 400 3.75rem/1.1 var(--font-display); // 60px
+  --display-lg-regular: 400 4.5rem/1.05 var(--font-display); // 72px
 
-  --display-md--family: var(--font-display);
-  --display-md--size: 3.75rem; // 60px
-  --display-md--weight: 400;
-  --display-md--lh: 1.1;
-
-  --display-lg--family: var(--font-display);
-  --display-lg--size: 4.5rem; // 72px
-  --display-lg--weight: 400;
-  --display-lg--lh: 1.05;
-
-  // Cursive (Italiana)
-  --cursive-md--family: var(--font-cursive);
-  --cursive-md--size: 2rem;
-  --cursive-md--weight: 400;
-  --cursive-md--lh: 1.2;
-
-  --cursive-lg--family: var(--font-cursive);
-  --cursive-lg--size: 3rem;
-  --cursive-lg--weight: 400;
-  --cursive-lg--lh: 1.2;
-
-  --cursive-xl--family: var(--font-cursive);
-  --cursive-xl--size: 4rem;
-  --cursive-xl--weight: 400;
-  --cursive-xl--lh: 1.15;
+  // Cursive (Italianno)
+  --cursive-md-regular: 400 1.5rem/1.2 var(--font-cursive);
+  --cursive-lg-regular: 400 2rem/1.2 var(--font-cursive);
+  --cursive-xl-regular: 400 3rem/1.2 var(--font-cursive);
+  --cursive-2xl-regular: 400 4rem/1.15 var(--font-cursive);
 
   // ----------------------------------------------------------
   // Color Palette — HSLA

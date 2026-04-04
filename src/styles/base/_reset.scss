@@ -11,7 +11,6 @@
 }
 
 html {
-  font-size: 16px;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   tab-size: 4;
@@ -19,10 +18,7 @@ html {
 
 body {
   min-height: 100vh;
-  font-family: var(--font-primary);
-  font-size: var(--body-md-regular--size);
-  font-weight: var(--body-md-regular--weight);
-  line-height: var(--body-md-regular--lh);
+  font: var(--body-md-regular) var(--font-primary);
   color: var(--color-neutral-700);
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;

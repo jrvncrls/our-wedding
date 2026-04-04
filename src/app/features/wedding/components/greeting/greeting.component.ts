@@ -9,7 +9,7 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
   styleUrl: './greeting.component.scss',
 })
 export class GreetingComponent {
-  name = input('Dear Guest');
+  name = input('Undin');
   scrollToRsvp(): void {
     const el = document.getElementById('rsvp');
     if (el) {
