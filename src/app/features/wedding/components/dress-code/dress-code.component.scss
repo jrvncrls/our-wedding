@@ -15,165 +15,67 @@
   }
 
   &__body {
-    background: var(--color-white);
-    border: 1px solid var(--color-primary-200);
-    border-radius: var(--radius-xl);
-    padding: 2.5rem 2rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-
-    @include m.from(md) {
-      padding: 3rem 3.5rem;
-    }
-  }
-
-  // ── Formal badge ─────────────────────────────────────────
-
-  &__formal-badge {
-    display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    align-self: center;
-    padding: 0.5rem 1.25rem;
-    background: var(--color-primary-100);
-    border: 1px solid var(--color-primary-300);
-    border-radius: var(--radius-full);
-    font-family: var(--font-primary);
-    font-size: 0.875rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-text-600);
-
-    i {
-      font-size: 1rem;
-      color: var(--color-primary-500);
-    }
+    gap: 2.5rem;
   }
+
+  // ── Description ───────────────────────────────────────────
 
   &__description {
     text-align: center;
     font-family: var(--font-primary);
     font-size: 1rem;
     color: var(--color-neutral-500);
-    line-height: 1.75;
-    max-width: 520px;
-    margin: 0 auto;
+    line-height: 1.8;
+    max-width: 560px;
   }
 
-  // ── Guidelines ───────────────────────────────────────────
+  // ── Attire images ─────────────────────────────────────────
 
-  &__guidelines {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-
-    @include m.from(sm) {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  &__guideline {
-    border-radius: var(--radius-lg);
-    padding: 1.25rem 1.5rem;
-
-    &--do {
-      background: var(--color-primary-50);
-      border: 1px solid var(--color-primary-200);
-
-      .dress-code__guideline-header i {
-        color: var(--color-primary-500);
-      }
-    }
-
-    &--dont {
-      background: hsla(0, 40%, 97%, 1);
-      border: 1px solid hsla(0, 30%, 88%, 1);
-
-      .dress-code__guideline-header i {
-        color: hsla(0, 55%, 55%, 1);
-      }
-    }
-
-    &-header {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 0.875rem;
-
-      i {
-        font-size: 1.25rem;
-      }
-
-      strong {
-        font-family: var(--font-primary);
-        font-size: 0.9rem;
-        font-weight: 700;
-        color: var(--color-neutral-700);
-      }
-    }
-
-    ul {
-      list-style: disc;
-      padding-left: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.375rem;
-
-      li {
-        font-family: var(--font-primary);
-        font-size: 0.875rem;
-        color: var(--color-neutral-500);
-        line-height: 1.55;
-      }
-    }
-  }
-
-  // ── Colour palette ───────────────────────────────────────
-
-  &__palette {
-    text-align: center;
-  }
-
-  &__palette-label {
-    font-family: var(--font-primary);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--color-neutral-400);
-    margin-bottom: 1rem;
-  }
-
-  &__swatches {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  &__swatch {
+  &__attire {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 2rem;
+    width: 100%;
+    max-width: 480px;
+  }
 
-    &-color {
-      display: block;
-      width: 3rem;
-      height: 3rem;
-      border-radius: var(--radius-full);
-      border: 2px solid hsla(0, 0%, 0%, 0.08);
-      box-shadow: var(--shadow-xs);
-    }
+  &__attire-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+  }
 
-    &-name {
-      font-family: var(--font-primary);
-      font-size: 0.6875rem;
-      font-weight: 500;
-      color: var(--color-neutral-500);
-      text-align: center;
-    }
+  &__attire-image {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    display: block;
+  }
+
+  &__attire-label {
+    font-family: var(--font-primary);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-neutral-400);
+  }
+
+
+  // ── Evening note ─────────────────────────────────────────
+
+  &__note {
+    text-align: center;
+    font-family: var(--font-primary);
+    font-size: 0.9375rem;
+    font-style: italic;
+    color: var(--color-neutral-400);
+    line-height: 1.75;
+    max-width: 480px;
   }
 }

@@ -11,60 +11,54 @@
     </div>
 
     <div class="dress-code__body">
-      <div class="dress-code__formal-badge">
-        <i class="uil uil-star-half-alt" aria-hidden="true"></i>
-        <span>Formal Attire</span>
-      </div>
 
       <p class="dress-code__description">
-        We invite you to dress elegantly for our special day. Think floor-length gowns, cocktail
-        dresses, or smart suits. We want everyone to feel their most beautiful.
+        To complement the setting and style of our celebration, we kindly ask our guests to wear
+        formal attire within the color palette shown below.
+        <br /><br />
+        We encourage refined, timeless looks in these tones and ask that bright or bold colors
+        be avoided.
       </p>
 
-      <div class="dress-code__guidelines">
-        <div class="dress-code__guideline dress-code__guideline--do">
-          <div class="dress-code__guideline-header">
-            <i class="uil uil-check-circle" aria-hidden="true"></i>
-            <strong>Please Do</strong>
-          </div>
-          <ul>
-            <li>Floor-length or tea-length gowns for ladies</li>
-            <li>Suits or barong tagalog for gentlemen</li>
-            <li>Elegant cocktail dresses</li>
-            <li>Smart formal separates</li>
-          </ul>
+      <!-- Attire images -->
+      <div class="dress-code__attire">
+        <div class="dress-code__attire-item">
+          <img
+            src="https://assets.zyrosite.com/Zt35zfqSOqT4BfXX/img_2835-laG3aXlTOJ6sq6jB.png"
+            alt="Women's formal attire"
+            class="dress-code__attire-image"
+            loading="lazy"
+          />
+          <p class="dress-code__attire-label">Women</p>
         </div>
 
-        <div class="dress-code__guideline dress-code__guideline--dont">
-          <div class="dress-code__guideline-header">
-            <i class="uil uil-times-circle" aria-hidden="true"></i>
-            <strong>Please Avoid</strong>
-          </div>
-          <ul>
-            <li>White, ivory, or cream (reserved for the bride)</li>
-            <li>Casual wear, jeans, or shorts</li>
-            <li>Flip-flops or athletic footwear</li>
-          </ul>
+        <div class="dress-code__attire-item">
+          <img
+            src="https://assets.zyrosite.com/Zt35zfqSOqT4BfXX/img_2837-8HPVHS11LCaxjeaT.png"
+            alt="Men's formal attire"
+            class="dress-code__attire-image"
+            loading="lazy"
+          />
+          <p class="dress-code__attire-label">Men</p>
+        </div>
+
+        <div class="dress-code__attire-item">
+          <img
+            src="https://assets.zyrosite.com/Zt35zfqSOqT4BfXX/img_2839-6PZloze8kXTdndY2.png"
+            alt="Kids' formal attire"
+            class="dress-code__attire-image"
+            loading="lazy"
+          />
+          <p class="dress-code__attire-label">Kids</p>
         </div>
       </div>
 
-      <!-- Color palette -->
-      <div class="dress-code__palette">
-        <p class="dress-code__palette-label">Suggested Colour Palette</p>
-        <div class="dress-code__swatches">
-          @for (swatch of palette; track swatch.name) {
-            <div class="dress-code__swatch" [title]="swatch.name">
-              <span
-                class="dress-code__swatch-color"
-                [style.background]="swatch.hsla"
-                role="img"
-                [attr.aria-label]="swatch.name + ' — ' + swatch.hex"
-              ></span>
-              <span class="dress-code__swatch-name">{{ swatch.name }}</span>
-            </div>
-          }
-        </div>
-      </div>
+
+<p class="dress-code__note">
+        As the celebration will continue into the evening, we recommend bringing a light jacket
+        or wrap.
+      </p>
+
     </div>
   </div>
 </section>
