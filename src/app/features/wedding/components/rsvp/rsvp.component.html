@@ -6,7 +6,7 @@
       <span class="eyebrow" style="color: var(--color-primary-300)">Kindly Reply</span>
       <h2 class="rsvp__title">RSVP</h2>
       <p class="rsvp__subtitle">
-        Please respond by <strong>November 22, 2026</strong> so we can plan accordingly.
+        Please respond by <strong>September 1, 2026</strong> so we can plan accordingly.
       </p>
     </div>
 
@@ -41,45 +41,6 @@
         novalidate
         aria-label="RSVP form"
       >
-        <!-- Full Name -->
-        <div class="rsvp__field">
-          <label class="rsvp__label" for="fullName">
-            Your Full Name <span class="rsvp__required" aria-hidden="true">*</span>
-          </label>
-          <input
-            class="rsvp__input"
-            [class.rsvp__input--error]="fieldInvalid('fullName')"
-            id="fullName"
-            type="text"
-            formControlName="fullName"
-            placeholder="e.g. Maria Santos"
-            autocomplete="name"
-            [attr.aria-invalid]="fieldInvalid('fullName')"
-            aria-describedby="fullName-error"
-          />
-          @if (fieldInvalid('fullName')) {
-            <p class="rsvp__error" id="fullName-error" role="alert">
-              <i class="uil uil-exclamation-circle"></i>
-              Please enter your full name.
-            </p>
-          }
-        </div>
-
-        <!-- Partner name -->
-        <div class="rsvp__field">
-          <label class="rsvp__label" for="partner">
-            Partner / Plus-One <span class="rsvp__label-hint">(if applicable)</span>
-          </label>
-          <input
-            class="rsvp__input"
-            id="partner"
-            type="text"
-            formControlName="partner"
-            placeholder="Guest's full name"
-            autocomplete="off"
-          />
-        </div>
-
         <!-- Attendance -->
         <div class="rsvp__field">
           <fieldset class="rsvp__fieldset">
@@ -131,30 +92,20 @@
           }
         </div>
 
-        <!-- Meal choice (only when attending) -->
+
+<!-- Dietary requirements (only when attending) -->
         @if (isAttending()) {
           <div class="rsvp__field rsvp__field--animate">
-            <label class="rsvp__label" for="meal">Meal Preference</label>
-            <select class="rsvp__select" id="meal" formControlName="meal">
-              <option value="" disabled>Select a meal</option>
-              <option value="beef">Beef Tenderloin</option>
-              <option value="fish">Grilled Sea Bass</option>
-              <option value="vegetarian">Vegetarian Option</option>
-            </select>
+            <label class="rsvp__label" for="dietary">Dietary Requirements</label>
+            <input
+              class="rsvp__input"
+              id="dietary"
+              type="text"
+              formControlName="dietary"
+              placeholder="e.g. Gluten-free, nut allergy, vegan…"
+            />
           </div>
         }
-
-        <!-- Dietary requirements -->
-        <div class="rsvp__field">
-          <label class="rsvp__label" for="dietary">Dietary Requirements</label>
-          <input
-            class="rsvp__input"
-            id="dietary"
-            type="text"
-            formControlName="dietary"
-            placeholder="e.g. Gluten-free, nut allergy, vegan…"
-          />
-        </div>
 
         <!-- Message -->
         <div class="rsvp__field">

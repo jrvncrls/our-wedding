@@ -3,10 +3,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 
 export interface RSVPFormValue {
-  fullName: string;
-  partner: string;
   attending: string;
-  meal: string;
   dietary: string;
   message: string;
 }
@@ -26,10 +23,7 @@ export class RsvpComponent {
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
-      fullName: ['', [Validators.required, Validators.minLength(2)]],
-      partner: [''],
       attending: ['', Validators.required],
-      meal: [''],
       dietary: [''],
       message: [''],
     });
