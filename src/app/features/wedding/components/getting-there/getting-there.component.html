@@ -10,23 +10,56 @@
       <span class="section-rule"></span>
     </div>
 
-    <div class="getting-there__grid">
-      @for (option of travelOptions; track option.title) {
-        <div class="getting-there__card">
-          <div class="getting-there__card-icon" aria-hidden="true">
-            <i class="uil {{ option.icon }}"></i>
+    <div class="getting-there__venues">
+
+      <!-- Ceremony -->
+      <div class="getting-there__venue">
+        <p class="getting-there__venue-description">
+          The chapel is set on a scenic hillside overlooking the countryside of Batangas.
+          We recommend allowing extra travel time, as the road leading up to the chapel is winding.
+          <br /><br />
+          Parking will be available near the chapel grounds.
+        </p>
+        <div class="getting-there__venue-card">
+          <div class="getting-there__venue-image-wrap">
+            <img
+              src="https://assets.zyrosite.com/Zt35zfqSOqT4BfXX/img_4432-2-BPV3EqcUEJOHUYd0.JPG"
+              alt="Don Bosco Chapel on the Hill"
+              class="getting-there__venue-image"
+              loading="lazy"
+            />
           </div>
-          <h3 class="getting-there__card-title">{{ option.title }}</h3>
-          <ul class="getting-there__card-list">
-            @for (detail of option.details; track detail) {
-              <li class="getting-there__card-item">
-                <i class="uil uil-check-circle" aria-hidden="true"></i>
-                {{ detail }}
-              </li>
-            }
-          </ul>
+          <div class="getting-there__venue-info">
+            <p class="getting-there__venue-name">Don Bosco Chapel on the Hill</p>
+            <p class="getting-there__venue-location">Batulao, Nasugbu, Batangas</p>
+          </div>
         </div>
-      }
+      </div>
+
+      <div class="getting-there__divider" aria-hidden="true"></div>
+
+      <!-- Reception -->
+      <div class="getting-there__venue">
+        <p class="getting-there__venue-description">
+          Following the ceremony, guests are invited to join us at Narra Hill for the reception.
+          The venue is approximately 15 mins from the chapel.
+        </p>
+        <div class="getting-there__venue-card">
+          <div class="getting-there__venue-image-wrap">
+            <img
+              src="https://assets.zyrosite.com/Zt35zfqSOqT4BfXX/img_9293-qMqyHZIFCkKzY2gk.PNG"
+              alt="Narra Hill"
+              class="getting-there__venue-image"
+              loading="lazy"
+            />
+          </div>
+          <div class="getting-there__venue-info">
+            <p class="getting-there__venue-name">Narra Hill</p>
+            <p class="getting-there__venue-location">Laurel, Batangas</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>

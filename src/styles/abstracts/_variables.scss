@@ -43,11 +43,11 @@
 
   // Display (Playfair Display)
   --display-sm-regular: 400 1.5rem/1.15 var(--font-display); // 48px
-  --display-md-regular: 400 2rem/1.1 var(--font-display); // 60px
-  --display-md-semibold: 600 2rem/1.1 var(--font-display);
-  --display-lg-regular: 400 3rem/1.05 var(--font-display); // 72px
+  --display-md-regular: 400 1.75rem/1.1 var(--font-display); // 60px
+  --display-md-semibold: 600 1.75rem/1.1 var(--font-display);
+  --display-lg-regular: 400 2.5rem/1.05 var(--font-display); // 72px
   --display-xl-regular: 400 5rem/1.05 var(--font-display); // 72px
-  --display-xl-semibold: 600 5rem/1.05 var(--font-display);
+  --display-xl-semibold: 600 3rem/1.05 var(--font-display);
 
   // Cursive (Italianno)
   --cursive-md-regular: 400 1.5rem/1.2 var(--font-cursive);
@@ -84,17 +84,17 @@
   --color-text-800: hsla(31, 50%, 18%, 1);
   --color-text-900: hsla(31, 52%, 12%, 1);
 
-  // Neutral (default text — dark steel blue)
-  --color-neutral-50: hsla(212, 20%, 97%, 1);
-  --color-neutral-100: hsla(212, 22%, 93%, 1);
-  --color-neutral-200: hsla(212, 22%, 85%, 1);
-  --color-neutral-300: hsla(212, 24%, 72%, 1);
-  --color-neutral-400: hsla(212, 26%, 55%, 1);
-  --color-neutral-500: hsla(212, 28%, 38%, 1);
-  --color-neutral-600: hsla(212, 30%, 27%, 1);
-  --color-neutral-700: hsla(212, 33%, 18%, 1); // base
-  --color-neutral-800: hsla(212, 33%, 12%, 1);
-  --color-neutral-900: hsla(212, 35%, 7%, 1);
+  /* Neutral (default text — true grayscale) */
+  --color-neutral-50: hsla(0, 0%, 97%, 1);
+  --color-neutral-100: hsla(0, 0%, 93%, 1);
+  --color-neutral-200: hsla(0, 0%, 85%, 1);
+  --color-neutral-300: hsla(0, 0%, 72%, 1);
+  --color-neutral-400: hsla(0, 0%, 55%, 1);
+  --color-neutral-500: hsla(0, 0%, 38%, 1);
+  --color-neutral-600: hsla(0, 0%, 27%, 1);
+  --color-neutral-700: hsla(0, 0%, 18%, 1); /* base */
+  --color-neutral-800: hsla(0, 0%, 12%, 1);
+  --color-neutral-900: hsla(0, 0%, 7%, 1);
 
   // Semantic
   --color-white: hsla(0, 0%, 100%, 1);
