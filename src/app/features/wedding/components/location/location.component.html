@@ -6,40 +6,13 @@
       <span class="section-rule"></span>
     </div>
 
-    <div class="location__grid">
-      @for (venue of venues; track venue.name) {
-        <div class="location__venue">
-          <div class="location__venue-header">
-            <span class="eyebrow">{{ venue.label }}</span>
-            <h3 class="location__venue-name">{{ venue.name }}</h3>
-            <p class="location__venue-address">{{ venue.address }}</p>
-          </div>
-
-          <div class="location__map-wrapper">
-            <iframe
-              [title]="venue.name + ' map'"
-              [src]="venue.embedUrl"
-              width="100%"
-              height="100%"
-              style="border:0;"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              allowfullscreen
-            ></iframe>
-          </div>
-
-          <a
-            class="location__directions-btn"
-            [href]="venue.mapsUrl"
-            target="_blank"
-            rel="noopener noreferrer"
-            [attr.aria-label]="'Open ' + venue.name + ' in Google Maps'"
-          >
-            <i class="uil uil-directions"></i>
-            Get Directions
-          </a>
-        </div>
-      }
+    <div class="location__map-wrapper">
+      <img
+        src="https://assets.zyrosite.com/Zt35zfqSOqT4BfXX/img_2905-WFhqE26NsgvzleNK.png"
+        alt="Map showing Don Bosco Chapel on the Hill and Narra Hill"
+        class="location__map-image"
+        loading="lazy"
+      />
     </div>
   </div>
 </section>
