@@ -15,12 +15,15 @@
               <span>Add your photo here</span>
             </div> -->
           </div>
-
-          @if (image.caption) {
-            <p class="gallery__caption">{{ image.caption }}</p>
-          }
         </div>
       }
+    </div>
+
+    <div class="gallery__cta">
+      <app-button variant="outline-white" size="md" (clicked)="goToGallery()">
+        <i class="uil uil-images"></i>
+        Check Out Gallery
+      </app-button>
     </div>
 
     <button

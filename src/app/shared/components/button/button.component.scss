@@ -76,6 +76,17 @@
     }
   }
 
+  &--outline-white {
+    background: transparent;
+    color: var(--color-white);
+    border-color: var(--color-white);
+
+    &:hover:not(.btn--disabled) {
+      background: hsla(0, 0%, 100%, 0.15);
+      box-shadow: 0 4px 20px hsla(0, 0%, 0%, 0.15);
+    }
+  }
+
   &--ghost {
     background: transparent;
     color: var(--color-primary-500);

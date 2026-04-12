@@ -63,22 +63,12 @@
     }
   }
 
-  &__caption {
+  &__cta {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 2;
-    padding: var(--space-8) var(--space-6) var(--space-4);
-    background: linear-gradient(
-      to top,
-      color-mix(in srgb, var(--color-neutral-800) 70%, transparent),
-      transparent
-    );
-    font: var(--body-sm-medium) var(--font-primary);
-    color: var(--color-white);
-    font-style: italic;
-    text-align: center;
+    bottom: var(--space-8);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
   }
 
   &__control {

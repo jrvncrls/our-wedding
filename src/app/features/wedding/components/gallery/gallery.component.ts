@@ -1,4 +1,6 @@
 import { Component, computed, OnDestroy, OnInit, signal } from '@angular/core';
+import { Router } from '@angular/router';
+import { ButtonComponent } from '../../../../shared/components/button/button.component';
 
 export interface GalleryImage {
   src: string;
@@ -9,37 +11,38 @@ export interface GalleryImage {
 @Component({
   selector: 'app-gallery',
   standalone: true,
-  imports: [],
+  imports: [ButtonComponent],
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.scss',
 })
 export class GalleryComponent implements OnInit, OnDestroy {
+  constructor(private router: Router) {}
+
+  goToGallery(): void {
+    this.router.navigate(['/our-gallery']);
+  }
+
   // Replace these paths with actual wedding photos in public/assets/gallery/
   readonly images: GalleryImage[] = [
     {
       src: 'https://images.unsplash.com/photo-1473177104440-ffee2f376098?auto=format&fit=crop&w=1920',
       alt: 'Jervin and Jarmaine — engagement shoot',
-      caption: 'The moment we knew',
     },
     {
       src: 'https://images.unsplash.com/photo-1558929992-f57215da003e?auto=format&fit=crop&w=1920',
       alt: 'Couple at the beach',
-      caption: 'Our first getaway',
     },
     {
       src: 'https://images.unsplash.com/photo-1558929992-f57215da003e?auto=format&fit=crop&w=1920',
       alt: 'Engagement photo',
-      caption: 'He asked, she said yes',
     },
     {
       src: 'https://images.unsplash.com/photo-1473177104440-ffee2f376098?auto=format&fit=crop&w=1920',
       alt: 'Couple at sunset',
-      caption: 'Golden hour, golden hearts',
     },
     {
       src: 'https://images.unsplash.com/photo-1558929992-f57215da003e?auto=format&fit=crop&w=1920',
       alt: 'Pre-wedding shoot',
-      caption: 'Forever starts here',
     },
   ];
 

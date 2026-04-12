@@ -10,6 +10,7 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
 })
 export class GreetingComponent {
   name = input('Undin');
+
   scrollToRsvp(): void {
     const el = document.getElementById('rsvp');
     if (el) {
