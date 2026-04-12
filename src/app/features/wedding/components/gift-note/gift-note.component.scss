@@ -1,6 +1,7 @@
 @use 'abstracts/mixins' as m;
 
 .gift-note {
+  padding-bottom: 5rem;
   &__separator {
     display: flex;
     justify-content: center;

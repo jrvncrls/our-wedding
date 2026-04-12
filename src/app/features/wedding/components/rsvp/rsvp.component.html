@@ -6,7 +6,8 @@
       <span class="eyebrow" style="color: var(--color-primary-300)">Kindly Reply</span>
       <h2 class="rsvp__title">RSVP</h2>
       <p class="rsvp__subtitle">
-        Please respond by <strong>September 1, 2026</strong> so we can plan accordingly.
+        Please respond by <strong>September 1, 2026</strong>. Small token awaits guests who respond
+        in advance.
       </p>
     </div>
 
@@ -92,8 +93,7 @@
           }
         </div>
 
-
-<!-- Dietary requirements (only when attending) -->
+        <!-- Dietary requirements (only when attending) -->
         @if (isAttending()) {
           <div class="rsvp__field rsvp__field--animate">
             <label class="rsvp__label" for="dietary">Dietary Requirements</label>
@@ -106,18 +106,6 @@
             />
           </div>
         }
-
-        <!-- Message -->
-        <div class="rsvp__field">
-          <label class="rsvp__label" for="message">Leave a Message</label>
-          <textarea
-            class="rsvp__textarea"
-            id="message"
-            formControlName="message"
-            rows="3"
-            placeholder="Share your wishes for the couple…"
-          ></textarea>
-        </div>
 
         <!-- Submit -->
         <div class="rsvp__submit">

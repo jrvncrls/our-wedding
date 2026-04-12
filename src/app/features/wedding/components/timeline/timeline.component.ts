@@ -23,7 +23,7 @@ export class TimelineComponent {
     },
     {
       time: '4:00 PM',
-      title: 'Photo Session',
+      title: 'Grazing & Photo Session',
       description: '',
       image: 'https://assets.zyrosite.com/Zt35zfqSOqT4BfXX/img_2796-p2MsR7Q83wce4n6y.jpeg',
     },
