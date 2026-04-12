@@ -19,6 +19,26 @@
       <!-- Desktop Navigation -->
       <nav class="header__nav" aria-label="Main navigation">
         <ul class="header__nav-list" role="list">
+          <li class="header__nav-item">
+            <button
+              class="header__nav-link"
+              [class.header__nav-link--active]="activeSection() === 'countdown'"
+              (click)="scrollTo('countdown')"
+            >
+              Our Story
+            </button>
+          </li>
+
+          <li class="header__nav-item">
+            <button
+              class="header__nav-link"
+              [class.header__nav-link--active]="activeSection() === 'gallery'"
+              (click)="scrollTo('gallery')"
+            >
+              Gallery
+            </button>
+          </li>
+
           <!-- Wedding dropdown -->
           <li
             class="header__nav-item header__nav-item--has-dropdown"
@@ -64,26 +84,6 @@
               </li>
             </ul>
           </li>
-
-          <li class="header__nav-item">
-            <button
-              class="header__nav-link"
-              [class.header__nav-link--active]="activeSection() === 'gallery'"
-              (click)="scrollTo('gallery')"
-            >
-              Gallery
-            </button>
-          </li>
-
-          <li class="header__nav-item">
-            <button
-              class="header__nav-link"
-              [class.header__nav-link--active]="activeSection() === 'countdown'"
-              (click)="scrollTo('countdown')"
-            >
-              Our Story
-            </button>
-          </li>
         </ul>
       </nav>
     </div>
@@ -119,6 +119,24 @@
   >
     <nav aria-label="Mobile navigation">
       <ul class="header__nav-list header__nav-list--mobile" role="list">
+        <li class="header__nav-item">
+          <button
+            class="header__nav-link"
+            [class.header__nav-link--active]="activeSection() === 'countdown'"
+            (click)="scrollTo('countdown')"
+          >
+            Our Story
+          </button>
+        </li>
+        <li class="header__nav-item">
+          <button
+            class="header__nav-link"
+            [class.header__nav-link--active]="activeSection() === 'gallery'"
+            (click)="scrollTo('gallery')"
+          >
+            Gallery
+          </button>
+        </li>
         <li class="header__nav-item header__mobile-accordion">
           <button
             class="header__nav-link"
@@ -160,24 +178,6 @@
               </button>
             </li>
           </ul>
-        </li>
-        <li class="header__nav-item">
-          <button
-            class="header__nav-link"
-            [class.header__nav-link--active]="activeSection() === 'gallery'"
-            (click)="scrollTo('gallery')"
-          >
-            Gallery
-          </button>
-        </li>
-        <li class="header__nav-item">
-          <button
-            class="header__nav-link"
-            [class.header__nav-link--active]="activeSection() === 'countdown'"
-            (click)="scrollTo('countdown')"
-          >
-            Our Story
-          </button>
         </li>
       </ul>
     </nav>
