@@ -7,6 +7,7 @@ import { TimelineComponent } from '../../components/timeline/timeline.component'
 import { GettingThereComponent } from '../../components/getting-there/getting-there.component';
 import { LocationComponent } from '../../components/location/location.component';
 import { DressCodeComponent } from '../../components/dress-code/dress-code.component';
+import { FaqCtaComponent } from '../../components/faq-cta/faq-cta.component';
 import { GiftNoteComponent } from '../../components/gift-note/gift-note.component';
 import { RsvpComponent } from '../../components/rsvp/rsvp.component';
 
@@ -22,6 +23,7 @@ import { RsvpComponent } from '../../components/rsvp/rsvp.component';
     GettingThereComponent,
     LocationComponent,
     DressCodeComponent,
+    FaqCtaComponent,
     GiftNoteComponent,
     RsvpComponent,
   ],

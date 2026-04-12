@@ -28,6 +28,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'faq',
+    loadComponent: () =>
+      import('./features/wedding/pages/faq-page/faq-page.component').then(
+        (m) => m.FaqPageComponent,
+      ),
+  },
+  {
     path: '**',
     redirectTo: '',
   },

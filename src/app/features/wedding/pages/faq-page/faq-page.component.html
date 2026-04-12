@@ -1,0 +1,51 @@
+<main class="faq-page section" aria-label="Frequently asked questions">
+  <div class="container container--narrow">
+
+    <div class="faq-page__header">
+      <span class="eyebrow">Everything You Need to Know</span>
+      <h1 class="faq-page__title">FAQs</h1>
+      <span class="section-rule"></span>
+      <p class="faq-page__subtitle">
+        A few things to help you prepare for our special day.
+      </p>
+    </div>
+
+    <div class="faq-page__list" role="list">
+      @for (faq of faqs; track faq.question; let i = $index) {
+        <div
+          class="faq-page__item"
+          [class.faq-page__item--open]="isOpen(i)"
+          role="listitem"
+        >
+          <button
+            class="faq-page__question"
+            [attr.aria-expanded]="isOpen(i)"
+            [attr.aria-controls]="'faq-answer-' + i"
+            (click)="toggle(i)"
+          >
+            <span>{{ faq.question }}</span>
+            <i
+              class="uil faq-page__chevron"
+              [class.uil-angle-up]="isOpen(i)"
+              [class.uil-angle-down]="!isOpen(i)"
+              aria-hidden="true"
+            ></i>
+          </button>
+
+          <div
+            class="faq-page__answer"
+            [id]="'faq-answer-' + i"
+            [attr.aria-hidden]="!isOpen(i)"
+          >
+            <div class="faq-page__answer-inner">
+              @for (line of faq.answer.split('\n\n'); track $index) {
+                <p>{{ line }}</p>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</main>
