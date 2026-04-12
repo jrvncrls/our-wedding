@@ -10,7 +10,7 @@ import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild, signal } fr
 export class MusicPlayerComponent implements AfterViewInit, OnDestroy {
   @ViewChild('audioRef') audioRef!: ElementRef<HTMLAudioElement>;
 
-  readonly audioSrc = 'piano_music.mp3';
+  readonly audioSrc = 'piano_music.m4a';
 
   readonly waveBars = Array.from({ length: 30 });
 
