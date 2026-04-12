@@ -20,13 +20,14 @@
       <nav class="header__nav" aria-label="Main navigation">
         <ul class="header__nav-list" role="list">
           <li class="header__nav-item">
-            <button
+            <a
               class="header__nav-link"
-              [class.header__nav-link--active]="activeSection() === 'countdown'"
-              (click)="scrollTo('countdown')"
+              routerLink="/our-story"
+              routerLinkActive="header__nav-link--active"
+              [routerLinkActiveOptions]="{ exact: true }"
             >
               Our Story
-            </button>
+            </a>
           </li>
 
           <li class="header__nav-item">
@@ -120,13 +121,15 @@
     <nav aria-label="Mobile navigation">
       <ul class="header__nav-list header__nav-list--mobile" role="list">
         <li class="header__nav-item">
-          <button
+          <a
             class="header__nav-link"
-            [class.header__nav-link--active]="activeSection() === 'countdown'"
-            (click)="scrollTo('countdown')"
+            routerLink="/our-story"
+            routerLinkActive="header__nav-link--active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="closeMobileMenu()"
           >
             Our Story
-          </button>
+          </a>
         </li>
         <li class="header__nav-item">
           <a

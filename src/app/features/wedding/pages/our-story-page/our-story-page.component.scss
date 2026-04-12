@@ -1,0 +1,148 @@
+@use 'abstracts/mixins' as m;
+
+.story-page {
+  min-height: 100vh;
+  padding-top: calc(var(--space-16) + 80px);
+  padding-bottom: var(--space-24);
+
+  // ── Page header ──────────────────────────────────────────────
+  &__header {
+    text-align: center;
+    margin-bottom: var(--space-12);
+
+    @include m.from(md) {
+      margin-bottom: var(--space-16);
+    }
+  }
+
+  &__title {
+    font: var(--display-md-regular);
+    color: var(--color-text-500);
+    margin: var(--space-2) 0 var(--space-4);
+  }
+
+  // ── Story article ────────────────────────────────────────────
+  &__article {
+    max-width: 660px;
+    margin: 0 auto var(--space-16);
+    text-align: center;
+    position: relative;
+
+    @include m.from(md) {
+      margin-bottom: var(--space-20);
+    }
+  }
+
+  &__ornament {
+    display: block;
+    font: var(--display-xl-regular);
+    color: var(--color-primary-300);
+    line-height: 0.6;
+    margin-bottom: var(--space-8);
+    font-family: var(--font-display);
+    user-select: none;
+  }
+
+  &__lead {
+    font: var(--body-lg-regular) var(--font-primary);
+    color: var(--color-text-500);
+    font-style: italic;
+    line-height: 1.8;
+    margin-bottom: var(--space-6);
+
+    @include m.from(md) {
+      font-size: 1.35rem;
+    }
+  }
+
+  &__body {
+    font: var(--body-md-regular) var(--font-primary);
+    color: var(--color-neutral-600);
+    line-height: 1.85;
+    margin-bottom: var(--space-5);
+  }
+
+  &__closing {
+    font: var(--body-md-semibold) var(--font-primary);
+    color: var(--color-text-500);
+    font-style: italic;
+    line-height: 1.8;
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+  }
+
+  // ── Divider ──────────────────────────────────────────────────
+  &__divider {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    margin: 0 auto var(--space-16);
+    max-width: 480px;
+
+    @include m.from(md) {
+      margin-bottom: var(--space-20);
+    }
+  }
+
+  &__divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--color-primary-300), transparent);
+  }
+
+  &__divider-icon {
+    font-size: var(--space-5);
+    color: var(--color-primary-400);
+    flex-shrink: 0;
+  }
+
+  // ── Collage placeholder ──────────────────────────────────────
+  &__collage {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-xl);
+    background: linear-gradient(
+      145deg,
+      var(--color-primary-50) 0%,
+      var(--color-white) 50%,
+      var(--color-primary-100) 100%
+    );
+    box-shadow:
+      0 4px 24px hsla(36, 28%, 56%, 0.14),
+      inset 0 1px 0 hsla(0, 0%, 100%, 0.9);
+    border: 1.5px dashed var(--color-primary-300);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include m.from(md) {
+      aspect-ratio: 16 / 7;
+    }
+  }
+
+  &__collage-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+    color: var(--color-primary-400);
+  }
+
+  &__collage-icon {
+    font-size: 3.5rem;
+    opacity: 0.6;
+  }
+
+  &__collage-label {
+    font: var(--body-md-medium) var(--font-primary);
+    color: var(--color-primary-500);
+  }
+
+  &__collage-hint {
+    font: var(--body-sm-regular) var(--font-primary);
+    color: var(--color-neutral-400);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+  }
+}

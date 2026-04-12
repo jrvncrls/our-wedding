@@ -14,6 +14,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'our-story',
+    loadComponent: () =>
+      import('./features/wedding/pages/our-story-page/our-story-page.component').then(
+        (m) => m.OurStoryPageComponent,
+      ),
+  },
+  {
     path: 'our-gallery',
     loadComponent: () =>
       import('./features/wedding/pages/gallery-page/gallery-page.component').then(
