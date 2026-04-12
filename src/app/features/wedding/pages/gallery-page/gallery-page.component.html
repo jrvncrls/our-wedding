@@ -1,6 +1,5 @@
 <main class="gallery-page section" aria-label="Photo gallery">
   <div class="container">
-
     <!-- Page header -->
     <div class="gallery-page__header">
       <span class="eyebrow">Photo Album</span>
@@ -20,11 +19,7 @@
     <!-- Masonry grid -->
     <div class="gallery-page__grid" aria-label="Photo grid">
       @for (tile of tiles; track $index) {
-        <div
-          class="gallery-page__tile"
-          #tile
-          [style.transition-delay]="($index % 4) * 75 + 'ms'"
-        >
+        <div class="gallery-page__tile" #tile [style.transition-delay]="($index % 4) * 75 + 'ms'">
           <div class="gallery-page__tile-shine"></div>
           <div class="gallery-page__tile-content">
             <div class="gallery-page__tile-icon-wrap">
@@ -35,6 +30,5 @@
         </div>
       }
     </div>
-
   </div>
 </main>

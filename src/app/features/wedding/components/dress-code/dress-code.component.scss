@@ -1,6 +1,8 @@
 @use 'abstracts/mixins' as m;
 
 .dress-code {
+  padding-top: 5rem;
+
   &__header {
     text-align: center;
     margin-bottom: var(--space-10);
@@ -41,13 +43,35 @@
     max-width: 560px;
   }
 
+  // ── Color palette ─────────────────────────────────────────
+
+  &__palette {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+  }
+
+  &__swatch {
+    display: block;
+    width: 52px;
+    height: 52px;
+    border-radius: var(--radius-full);
+    flex-shrink: 0;
+    border: 1px solid #d2c0ab;
+
+    @include m.from(md) {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
   // ── Attire images ─────────────────────────────────────────
 
   &__attire {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
     width: 100%;
     max-width: 480px;
   }
@@ -58,6 +82,10 @@
     align-items: center;
     gap: 0.75rem;
     width: 100%;
+
+    &.women {
+      margin-bottom: 2rem;
+    }
   }
 
   &__attire-image {
