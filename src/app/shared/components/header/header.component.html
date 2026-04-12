@@ -145,9 +145,7 @@
         <li class="header__nav-item header__mobile-accordion">
           <button
             class="header__nav-link"
-            [class.header__nav-link--active]="
-              ['wedding', 'timeline', 'location', 'dress-code', 'gifts'].includes(activeSection())
-            "
+            [class.header__nav-link--active]="isWeddingRoute()"
             (click)="toggleMobileWedding()"
           >
             Wedding
