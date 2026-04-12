@@ -14,7 +14,7 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'gallery',
+    path: 'our-gallery',
     loadComponent: () =>
       import('./features/wedding/pages/gallery-page/gallery-page.component').then(
         (m) => m.GalleryPageComponent,

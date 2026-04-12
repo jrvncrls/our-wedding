@@ -9,8 +9,8 @@
       <!-- Logo -->
       <a
         class="header__logo"
-        href="#"
-        (click)="scrollTo('wedding'); $event.preventDefault()"
+        routerLink="/wedding"
+        (click)="closeMobileMenu()"
         aria-label="Back to top"
       >
         <img class="header__logo-img" src="logo_jj.png" alt="J & J" />
@@ -30,12 +30,14 @@
           </li>
 
           <li class="header__nav-item">
-            <button
+            <a
               class="header__nav-link"
-              (click)="navigateToGallery()"
+              routerLink="/our-gallery"
+              routerLinkActive="header__nav-link--active"
+              [routerLinkActiveOptions]="{ exact: true }"
             >
               Gallery
-            </button>
+            </a>
           </li>
 
           <!-- Wedding dropdown -->
@@ -46,11 +48,10 @@
           >
             <button
               class="header__nav-link"
-              [class.header__nav-link--active]="
-                ['wedding', 'timeline', 'location', 'dress-code', 'gifts'].includes(activeSection())
-              "
+              [class.header__nav-link--active]="isWeddingRoute()"
               [attr.aria-expanded]="weddingDropdownOpen()"
               aria-haspopup="true"
+              (click)="goToWedding()"
             >
               Wedding <i class="uil uil-angle-down header__nav-chevron"></i>
             </button>
@@ -128,12 +129,15 @@
           </button>
         </li>
         <li class="header__nav-item">
-          <button
+          <a
             class="header__nav-link"
-            (click)="navigateToGallery()"
+            routerLink="/our-gallery"
+            routerLinkActive="header__nav-link--active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="closeMobileMenu()"
           >
             Gallery
-          </button>
+          </a>
         </li>
         <li class="header__nav-item header__mobile-accordion">
           <button
