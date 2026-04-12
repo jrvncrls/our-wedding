@@ -196,11 +196,11 @@
       border-color var(--transition-fast);
 
     &:hover {
-      background: hsla(0, 0%, 100%, 0.12);
+      background: var(--color-primary-600);
     }
 
     &--selected {
-      background: hsla(36, 28%, 56%, 0.25);
+      background: var(--color-primary-600);
       border-color: var(--color-primary-400);
     }
   }

@@ -22,11 +22,9 @@
         </h3>
         <p class="rsvp__success-message">
           @if (isAttending()) {
-            Thank you for your RSVP! We are so excited to celebrate with you. Details will be sent
-            to you closer to the date.
+            Thank you for your RSVP! We are so excited to celebrate with you.
           } @else {
-            Thank you for letting us know. You will be missed, and we hope to celebrate with you
-            another time.
+            Thank you for letting us know and we hope to celebrate with you another time.
           }
         </p>
         <button class="rsvp__success-reset" (click)="resetForm()">Update my response</button>
@@ -104,6 +102,66 @@
               formControlName="dietary"
               placeholder="e.g. Gluten-free, nut allergy, vegan…"
             />
+          </div>
+        }
+
+        <!-- Guest house (only when attending) -->
+        @if (isAttending()) {
+          <div class="rsvp__field rsvp__field--animate">
+            <fieldset class="rsvp__fieldset">
+              <legend class="rsvp__label">
+                Willing to stay at a shared guest house on the wedding night?<span
+                  class="rsvp__required"
+                  aria-hidden="true"
+                  >*</span
+                >
+              </legend>
+              <div class="rsvp__radio-group">
+                <label
+                  class="rsvp__radio-label"
+                  [class.rsvp__radio-label--selected]="isStayingOvernight()"
+                >
+                  <input
+                    type="radio"
+                    formControlName="stayOvernight"
+                    value="yes"
+                    class="rsvp__radio-input"
+                  />
+                  <span class="rsvp__radio-box" aria-hidden="true">
+                    <i class="uil uil-check"></i>
+                  </span>
+                  <span class="rsvp__radio-text">
+                    <strong>Yes, I'd love to</strong>
+                    <small>Count me in for the night</small>
+                  </span>
+                </label>
+
+                <label
+                  class="rsvp__radio-label"
+                  [class.rsvp__radio-label--selected]="isNotStayingOvernight()"
+                >
+                  <input
+                    type="radio"
+                    formControlName="stayOvernight"
+                    value="no"
+                    class="rsvp__radio-input"
+                  />
+                  <span class="rsvp__radio-box" aria-hidden="true">
+                    <i class="uil uil-times"></i>
+                  </span>
+                  <span class="rsvp__radio-text">
+                    <strong>No, thank you</strong>
+                    <small>I'll be heading home</small>
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+            @if (fieldInvalid('stayOvernight')) {
+              <p class="rsvp__error" role="alert">
+                <i class="uil uil-exclamation-circle"></i>
+                Please let us know about the guest house.
+              </p>
+            }
           </div>
         }
 
