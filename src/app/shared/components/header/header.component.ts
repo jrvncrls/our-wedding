@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit, OnDestroy, signal } from '@angular/core';
+import { Router } from '@angular/router';
 import { ButtonComponent } from '../button/button.component';
 
 @Component({
@@ -9,6 +10,8 @@ import { ButtonComponent } from '../button/button.component';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent implements OnInit, OnDestroy {
+  constructor(private router: Router) {}
+
   mobileMenuOpen = signal(false);
   weddingDropdownOpen = signal(false);
   mobileWeddingOpen = signal(false);
@@ -63,6 +66,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   closeWeddingDropdown(): void {
     this.weddingDropdownOpen.set(false);
+  }
+
+  navigateToGallery(): void {
+    this.closeMobileMenu();
+    this.router.navigate(['/gallery']);
   }
 
   scrollTo(id: string): void {

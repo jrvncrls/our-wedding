@@ -32,8 +32,7 @@
           <li class="header__nav-item">
             <button
               class="header__nav-link"
-              [class.header__nav-link--active]="activeSection() === 'gallery'"
-              (click)="scrollTo('gallery')"
+              (click)="navigateToGallery()"
             >
               Gallery
             </button>
@@ -131,8 +130,7 @@
         <li class="header__nav-item">
           <button
             class="header__nav-link"
-            [class.header__nav-link--active]="activeSection() === 'gallery'"
-            (click)="scrollTo('gallery')"
+            (click)="navigateToGallery()"
           >
             Gallery
           </button>

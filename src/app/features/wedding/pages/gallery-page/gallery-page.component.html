@@ -1,0 +1,40 @@
+<main class="gallery-page section" aria-label="Photo gallery">
+  <div class="container">
+
+    <!-- Page header -->
+    <div class="gallery-page__header">
+      <span class="eyebrow">Photo Album</span>
+      <h1 class="gallery-page__title">Our Gallery</h1>
+      <span class="section-rule"></span>
+      <p class="gallery-page__subtitle">
+        Every moment from our story — prenup, the big day, and all the joy in between.
+      </p>
+      <div class="gallery-page__header-cta">
+        <app-button variant="primary" size="md" (clicked)="openDrive()">
+          <i class="uil uil-google-drive"></i>
+          View All Photos
+        </app-button>
+      </div>
+    </div>
+
+    <!-- Masonry grid -->
+    <div class="gallery-page__grid" aria-label="Photo grid">
+      @for (tile of tiles; track $index) {
+        <div
+          class="gallery-page__tile"
+          #tile
+          [style.transition-delay]="($index % 4) * 75 + 'ms'"
+        >
+          <div class="gallery-page__tile-shine"></div>
+          <div class="gallery-page__tile-content">
+            <div class="gallery-page__tile-icon-wrap">
+              <i class="uil uil-camera"></i>
+            </div>
+            <span class="gallery-page__tile-label">Coming soon</span>
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</main>

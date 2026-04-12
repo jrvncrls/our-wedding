@@ -14,6 +14,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'gallery',
+    loadComponent: () =>
+      import('./features/wedding/pages/gallery-page/gallery-page.component').then(
+        (m) => m.GalleryPageComponent,
+      ),
+  },
+  {
     path: '**',
     redirectTo: '',
   },
