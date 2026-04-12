@@ -1,6 +1,8 @@
 @use 'abstracts/mixins' as m;
 
 .faq-cta {
+  background: var(--color-white);
+
   &__inner {
     display: flex;
     flex-direction: column;

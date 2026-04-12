@@ -19,43 +19,50 @@ export class TimelineComponent {
       time: '2:00 PM',
       title: 'Ceremony',
       description: '',
-      image: 'https://assets.zyrosite.com/Zt35zfqSOqT4BfXX/img_2795-sjPcDxd81i2pwc3R.jpeg',
+      image:
+        'https://assets.zyrosite.com/Zt35zfqSOqT4BfXX/copy-of-classical-design-stickers-oval-landscape-square-cards-Sx2yWqzZA3tapIyT.png',
     },
     {
       time: '4:00 PM',
       title: 'Grazing & Photo Session',
       description: '',
-      image: 'https://assets.zyrosite.com/Zt35zfqSOqT4BfXX/img_2796-p2MsR7Q83wce4n6y.jpeg',
+      image:
+        'https://assets.zyrosite.com/Zt35zfqSOqT4BfXX/copy-of-classical-design-stickers-oval-landscape-square-cards-CJAKY8csZwiRDlQd.png',
     },
     {
       time: '6:00 PM',
       title: 'First Dance',
       description: '',
-      image: 'https://assets.zyrosite.com/Zt35zfqSOqT4BfXX/dance-2gQXf6oigl3p6Z4c.jpeg',
+      image:
+        'https://assets.zyrosite.com/Zt35zfqSOqT4BfXX/copy-of-classical-design-stickers-oval-landscape-square-cards-zy625Bho1nwVyM87.png',
     },
     {
       time: '7:00 PM',
       title: 'Dinner',
       description: '',
-      image: 'https://assets.zyrosite.com/Zt35zfqSOqT4BfXX/img_2794-2Fkrw80qj6vzyhTh.jpeg',
+      image:
+        'https://assets.zyrosite.com/Zt35zfqSOqT4BfXX/copy-of-classical-design-stickers-oval-landscape-square-cards-neD8FX5LY6q4QFwb.png',
     },
     {
       time: '8:00 PM',
       title: 'Toast and Messages',
       description: '',
-      image: 'https://assets.zyrosite.com/Zt35zfqSOqT4BfXX/img_2790-0UhfAkAP2R7AOruS.jpeg',
+      image:
+        'https://assets.zyrosite.com/Zt35zfqSOqT4BfXX/copy-of-classical-design-stickers-oval-landscape-square-cards-q8miKKGZKSKPEcGp.png',
     },
     {
       time: '8:30 PM',
       title: 'Cake Cutting',
       description: '',
-      image: 'https://assets.zyrosite.com/Zt35zfqSOqT4BfXX/img_2788-Kvx1uW7zqTvfHorq.jpeg',
+      image:
+        'https://assets.zyrosite.com/Zt35zfqSOqT4BfXX/copy-of-classical-design-stickers-oval-landscape-square-cards-okyuXywRviCx9DEi.png',
     },
     {
       time: '9:00 PM',
       title: 'Cocktail and Party',
       description: '',
-      image: 'https://assets.zyrosite.com/Zt35zfqSOqT4BfXX/img_2789-SlH8ipQUdvM3DbK1.jpeg',
+      image:
+        'https://assets.zyrosite.com/Zt35zfqSOqT4BfXX/copy-of-classical-design-stickers-oval-landscape-square-cards-iM9tTk8JaTepUp4M.png',
     },
   ];
 }
