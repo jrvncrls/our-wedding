@@ -1,0 +1,92 @@
+@use 'abstracts/mixins' as m;
+
+.music-player {
+  background: var(--color-primary-500);
+  padding-top: var(--space-10);
+  padding-bottom: var(--space-10);
+  border-top: 1px solid var(--color-neutral-100);
+  border-bottom: 1px solid var(--color-neutral-100);
+
+  // ── Pill container ─────────────────────────────────────────────
+  &__bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    width: max-content;
+    margin: 0 auto;
+    padding: var(--space-3) var(--space-6);
+    border: 1px solid var(--color-primary-200);
+    border-radius: var(--radius-full);
+    background: transparent;
+  }
+
+  // ── Play / Pause button ────────────────────────────────────────
+  &__play-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: var(--radius-full);
+    border: 1.5px solid var(--color-primary-200);
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary-200);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    transition:
+      border-color var(--transition-fast),
+      color var(--transition-fast),
+      background var(--transition-fast);
+
+    // Visually center the play icon (asymmetric glyph)
+    .uil-play {
+      margin-left: 2px;
+    }
+
+    &:hover {
+      background: var(--color-primary-200);
+      color: var(--color-primary-700);
+    }
+  }
+
+  // ── Musical note ───────────────────────────────────────────────
+  &__note {
+    font-size: 1.25rem;
+    color: var(--color-primary-200);
+    line-height: 1;
+    user-select: none;
+  }
+
+  // ── Waveform ───────────────────────────────────────────────────
+  &__waveform {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    height: 20px;
+  }
+
+  &__wave-bar {
+    display: block;
+    width: 3px;
+    border-radius: 2px;
+    background: var(--color-primary-200);
+    height: 4px;
+  }
+
+  // Animated state — duration and delay driven by --i set per bar in the template
+  &__waveform--active .music-player__wave-bar {
+    animation: mp-wave calc(0.8s + var(--i) * 0.07s) ease-in-out infinite calc(var(--i) * 0.06s);
+  }
+}
+
+@keyframes mp-wave {
+  0%,
+  100% {
+    height: 4px;
+  }
+  50% {
+    height: 16px;
+  }
+}

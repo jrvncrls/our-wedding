@@ -1,0 +1,46 @@
+<section
+  class="music-player section"
+  id="music"
+  aria-label="Wedding background music"
+>
+  <div class="container">
+    <div class="music-player__bar">
+
+      <button
+        class="music-player__play-btn"
+        type="button"
+        (click)="togglePlay()"
+        [attr.aria-label]="isPlaying() ? 'Pause music' : 'Play music'"
+      >
+        <i
+          class="uil"
+          [class.uil-play]="!isPlaying()"
+          [class.uil-pause]="isPlaying()"
+          aria-hidden="true"
+        ></i>
+      </button>
+
+      <span class="music-player__note" aria-hidden="true">♪</span>
+
+      <div
+        class="music-player__waveform"
+        [class.music-player__waveform--active]="isPlaying()"
+        aria-hidden="true"
+      >
+        @for (bar of waveBars; track $index) {
+          <span class="music-player__wave-bar" [style]="'--i:' + $index"></span>
+        }
+      </div>
+
+    </div>
+  </div>
+
+  <audio
+    #audioRef
+    loop
+    preload="metadata"
+    (ended)="onEnded()"
+  >
+    <source [src]="audioSrc" type="audio/mpeg" />
+  </audio>
+</section>
