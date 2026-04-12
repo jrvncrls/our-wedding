@@ -79,6 +79,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   toggleMobileWedding(): void {
+    this.goToWedding();
     this.mobileWeddingOpen.update((open) => !open);
   }
 
