@@ -72,14 +72,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font: 400 3rem/1.1 var(--font-display);
+    font: 400 2.5rem/1.1 var(--font-display);
     text-transform: uppercase;
     color: var(--color-white);
     margin: var(--space-2) 0;
     animation: fadeInUp 1s ease both 0.5s;
 
     @include m.from(lg) {
-      font-size: 5rem;
+      font-size: 4rem;
     }
   }
 
