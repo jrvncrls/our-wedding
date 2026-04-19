@@ -15,7 +15,14 @@ export class GreetingComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const video = this.videoRef.nativeElement;
-    video.play().catch(() => { /* blocked — video stays paused */ });
+
+    video.muted = true; // 🔑 REQUIRED
+    video.playsInline = true; // 🔑 helps iOS
+    video.autoplay = true;
+
+    video.play().catch(() => {
+      // fallback if autoplay still blocked
+    });
   }
 
   scrollToRsvp(): void {
