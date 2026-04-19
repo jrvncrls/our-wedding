@@ -60,12 +60,16 @@
   }
 
   &__label {
-    font: var(--body-md-regular) var(--font-primary);
+    font: var(--body-sm-regular) var(--font-primary);
     color: var(--color-primary-200);
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     animation: fadeInUp 1s ease both 0.3s;
+
+    @include m.from(lg) {
+      font-size: 1rem;
+    }
   }
 
   &__names {
@@ -99,10 +103,14 @@
   }
 
   &__date {
-    font: var(--cursive-md-regular);
+    font: var(--cursive-lg-regular);
     color: var(--color-primary-200);
     letter-spacing: 0.05em;
     animation: fadeInUp 1s ease both 0.8s;
+
+    @include m.from(lg) {
+      font-size: 2.5rem;
+    }
   }
 
   &__cta {
@@ -135,9 +143,13 @@
     color: hsla(0, 0%, 100%, 0.5);
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     margin-top: var(--space-2);
     animation: fadeIn 1.2s ease both 1.2s;
+
+    @include m.from(lg) {
+      font-size: 0.95rem;
+    }
   }
 }
 
