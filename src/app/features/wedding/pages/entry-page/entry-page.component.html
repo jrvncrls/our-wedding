@@ -1,0 +1,33 @@
+<div
+  class="entry"
+  [class.entry--leaving]="isLeaving()"
+  (click)="enter()"
+  role="button"
+  tabindex="0"
+  aria-label="Tap to enter"
+  (keydown.enter)="enter()"
+>
+  <div class="entry__bg" aria-hidden="true">
+    <video class="entry__video" autoplay muted loop playsinline preload="auto">
+      <source src="background.mp4" type="video/mp4" />
+    </video>
+    <div class="entry__overlay"></div>
+  </div>
+
+  <div class="entry__content">
+    <p class="entry__label">You are cordially invited to the wedding of</p>
+
+    <h1 class="entry__names">Jervin <span>&amp;</span> Jarmaine</h1>
+
+    <div class="entry__divider" aria-hidden="true"></div>
+
+    <p class="entry__date">December 22, 2026</p>
+
+    <div class="entry__cta" aria-hidden="true">
+      <span class="entry__cta-ring"></span>
+      <span class="entry__cta-icon">♡</span>
+    </div>
+
+    <p class="entry__hint">tap anywhere to enter</p>
+  </div>
+</div>

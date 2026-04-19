@@ -1,13 +1,17 @@
 import { Routes } from '@angular/router';
+import { entryGuard } from './features/wedding/services/entry.guard';
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'wedding',
-    pathMatch: 'full',
+    loadComponent: () =>
+      import('./features/wedding/pages/entry-page/entry-page.component').then(
+        (m) => m.EntryPageComponent,
+      ),
   },
   {
     path: 'wedding',
+    canActivate: [entryGuard],
     loadComponent: () =>
       import('./features/wedding/pages/wedding-home/wedding-home.component').then(
         (m) => m.WeddingHomeComponent,
@@ -15,6 +19,7 @@ export const routes: Routes = [
   },
   {
     path: 'our-story',
+    canActivate: [entryGuard],
     loadComponent: () =>
       import('./features/wedding/pages/our-story-page/our-story-page.component').then(
         (m) => m.OurStoryPageComponent,
@@ -22,6 +27,7 @@ export const routes: Routes = [
   },
   {
     path: 'our-gallery',
+    canActivate: [entryGuard],
     loadComponent: () =>
       import('./features/wedding/pages/gallery-page/gallery-page.component').then(
         (m) => m.GalleryPageComponent,
@@ -29,6 +35,7 @@ export const routes: Routes = [
   },
   {
     path: 'faq',
+    canActivate: [entryGuard],
     loadComponent: () =>
       import('./features/wedding/pages/faq-page/faq-page.component').then(
         (m) => m.FaqPageComponent,
