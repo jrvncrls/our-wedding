@@ -37,10 +37,9 @@
 
   <audio
     #audioRef
+    [src]="audioSrc"
     loop
-    preload="metadata"
+    preload="auto"
     (ended)="onEnded()"
-  >
-    <source [src]="audioSrc" type="audio/mpeg" />
-  </audio>
+  ></audio>
 </section>

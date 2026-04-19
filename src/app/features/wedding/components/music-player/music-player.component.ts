@@ -32,6 +32,7 @@ export class MusicPlayerComponent implements AfterViewInit, OnDestroy {
       audio.pause();
       this.isPlaying.set(false);
     } else {
+      audio.load();
       audio
         .play()
         .then(() => this.isPlaying.set(true))
