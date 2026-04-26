@@ -27,7 +27,27 @@
             Thank you for letting us know and we hope to celebrate with you another time.
           }
         </p>
-        <button class="rsvp__success-reset" (click)="resetForm()">Update my response</button>
+
+        <ul class="rsvp__summary">
+          <li class="rsvp__summary-item">
+            <span class="rsvp__summary-label">Attendance</span>
+            <span class="rsvp__summary-value">{{ isAttending() ? 'Attending' : 'Not attending' }}</span>
+          </li>
+          @if (isAttending()) {
+            <li class="rsvp__summary-item">
+              <span class="rsvp__summary-label">Guest house</span>
+              <span class="rsvp__summary-value">{{ isStayingOvernight() ? 'Staying overnight' : 'Heading home' }}</span>
+            </li>
+            @if (dietary) {
+              <li class="rsvp__summary-item">
+                <span class="rsvp__summary-label">Dietary</span>
+                <span class="rsvp__summary-value">{{ dietary }}</span>
+              </li>
+            }
+          }
+        </ul>
+
+        <button class="rsvp__success-reset" (click)="resetForm()">Update your RSVP here</button>
       </div>
     }
 
@@ -163,6 +183,14 @@
               </p>
             }
           </div>
+        }
+
+        <!-- Submit error -->
+        @if (submitError()) {
+          <p class="rsvp__error rsvp__error--submit" role="alert">
+            <i class="uil uil-exclamation-circle"></i>
+            Something went wrong. Please try again.
+          </p>
         }
 
         <!-- Submit -->

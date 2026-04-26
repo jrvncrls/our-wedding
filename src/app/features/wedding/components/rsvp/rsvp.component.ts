@@ -1,7 +1,9 @@
-import { Component, OnDestroy, signal } from '@angular/core';
+import { Component, DestroyRef, inject, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Subscription } from 'rxjs';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
+import { RsvpService } from '../../services/rsvp.service';
+import { GuestService } from '../../services/guest.service';
 
 export interface RSVPFormValue {
   attending: string;
@@ -17,13 +19,16 @@ export interface RSVPFormValue {
   templateUrl: './rsvp.component.html',
   styleUrl: './rsvp.component.scss',
 })
-export class RsvpComponent implements OnDestroy {
+export class RsvpComponent {
+  private rsvpService = inject(RsvpService);
+  private guestService = inject(GuestService);
+  private destroyRef = inject(DestroyRef);
+
   submitted = signal(false);
   submitting = signal(false);
+  submitError = signal(false);
 
   form: FormGroup;
-
-  private attendingSub: Subscription;
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
@@ -33,16 +38,29 @@ export class RsvpComponent implements OnDestroy {
       message: [''],
     });
 
-    this.attendingSub = this.form.get('attending')!.valueChanges.subscribe((val) => {
-      const ctrl = this.form.get('stayOvernight')!;
-      if (val === 'yes') {
-        ctrl.setValidators(Validators.required);
-      } else {
-        ctrl.clearValidators();
-        ctrl.reset();
-      }
-      ctrl.updateValueAndValidity();
-    });
+    this.form
+      .get('attending')!
+      .valueChanges.pipe(takeUntilDestroyed())
+      .subscribe((val) => {
+        const ctrl = this.form.get('stayOvernight')!;
+        if (val === 'yes') {
+          ctrl.setValidators(Validators.required);
+        } else {
+          ctrl.clearValidators();
+          ctrl.reset();
+        }
+        ctrl.updateValueAndValidity();
+      });
+
+    const existingRsvp = this.rsvpService.rsvp();
+    if (existingRsvp) {
+      this.form.patchValue({
+        attending: existingRsvp.attending ? 'yes' : 'no',
+        stayOvernight: existingRsvp.stay_the_night ? 'yes' : 'no',
+        dietary: existingRsvp.dietary_requirements ?? '',
+      });
+      this.submitted.set(true);
+    }
   }
 
   isAttending(): boolean {
@@ -66,28 +84,46 @@ export class RsvpComponent implements OnDestroy {
     return !!(ctrl && ctrl.invalid && (ctrl.dirty || ctrl.touched));
   }
 
+  get dietary(): string {
+    return this.form.get('dietary')?.value ?? '';
+  }
+
   onSubmit(): void {
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;
     }
 
-    this.submitting.set(true);
+    const token = this.guestService.guest()?.token;
+    if (!token) return;
 
-    // Simulate async submission — replace with actual API call
-    setTimeout(() => {
-      this.submitting.set(false);
-      this.submitted.set(true);
-      console.log('RSVP submitted:', this.form.value as RSVPFormValue);
-    }, 1500);
+    const { attending, stayOvernight, dietary } = this.form.value as RSVPFormValue;
+
+    this.submitting.set(true);
+    this.submitError.set(false);
+
+    this.rsvpService
+      .saveRsvp(token, {
+        attending: attending === 'yes',
+        stay_the_night: stayOvernight === 'yes',
+        dietary_requirements: dietary ?? '',
+      })
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: (rsvp) => {
+          this.rsvpService.setRsvp(rsvp);
+          this.submitting.set(false);
+          this.submitted.set(true);
+        },
+        error: () => {
+          this.submitting.set(false);
+          this.submitError.set(true);
+        },
+      });
   }
 
   resetForm(): void {
-    this.form.reset();
     this.submitted.set(false);
-  }
-
-  ngOnDestroy(): void {
-    this.attendingSub.unsubscribe();
+    this.submitError.set(false);
   }
 }

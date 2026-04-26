@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { GreetingComponent } from '../../components/greeting/greeting.component';
 import { CountdownComponent } from '../../components/countdown/countdown.component';
 import { TheDayComponent } from '../../components/the-day/the-day.component';
@@ -11,6 +11,7 @@ import { DressCodeComponent } from '../../components/dress-code/dress-code.compo
 import { FaqCtaComponent } from '../../components/faq-cta/faq-cta.component';
 import { GiftNoteComponent } from '../../components/gift-note/gift-note.component';
 import { RsvpComponent } from '../../components/rsvp/rsvp.component';
+import { GuestService } from '../../services/guest.service';
 
 @Component({
   selector: 'app-wedding-home',
@@ -32,4 +33,11 @@ import { RsvpComponent } from '../../components/rsvp/rsvp.component';
   templateUrl: './wedding-home.component.html',
   styleUrl: './wedding-home.component.scss',
 })
-export class WeddingHomeComponent {}
+export class WeddingHomeComponent {
+  private guestService = inject(GuestService);
+
+  protected guestName = computed(() => {
+    const guest = this.guestService.guest();
+    return guest?.nickname ?? guest?.first_name ?? 'Undin';
+  });
+}

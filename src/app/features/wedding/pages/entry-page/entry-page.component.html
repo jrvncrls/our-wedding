@@ -1,6 +1,7 @@
 <div
   class="entry"
   [class.entry--leaving]="isLeaving()"
+  [class.entry--locked]="!canEnter"
   (click)="enter()"
   role="button"
   tabindex="0"
@@ -27,11 +28,17 @@
 
     <p class="entry__date">December 22, 2026</p>
 
-    <div class="entry__cta" aria-hidden="true">
-      <span class="entry__cta-ring"></span>
-      <span class="entry__cta-icon">♡</span>
-    </div>
+    @if (canEnter) {
+      <div class="entry__cta" aria-hidden="true">
+        <span class="entry__cta-ring"></span>
+        <span class="entry__cta-icon">♡</span>
+      </div>
 
-    <p class="entry__hint">tap anywhere to enter</p>
+      <p class="entry__hint">tap anywhere to enter</p>
+    } @else {
+      <p class="entry__invalid">
+        Link is invalid. Kindly click on the invitation link we sent you to continue.
+      </p>
+    }
   </div>
 </div>
