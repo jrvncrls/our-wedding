@@ -24,6 +24,8 @@ export class RsvpComponent {
   private guestService = inject(GuestService);
   private destroyRef = inject(DestroyRef);
 
+  readonly canUpdateRsvp = new Date() < new Date('2026-09-02');
+
   submitted = signal(false);
   submitting = signal(false);
   submitError = signal(false);

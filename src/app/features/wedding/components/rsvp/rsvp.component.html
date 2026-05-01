@@ -47,7 +47,9 @@
           }
         </ul>
 
-        <button class="rsvp__success-reset" (click)="resetForm()">Update your RSVP here</button>
+        @if (canUpdateRsvp) {
+          <button class="rsvp__success-reset" (click)="resetForm()">Update your RSVP here</button>
+        }
       </div>
     }
 
