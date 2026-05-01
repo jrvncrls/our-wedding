@@ -18,10 +18,11 @@ export class CountdownComponent implements OnInit, OnDestroy {
   private guestService = inject(GuestService);
   isAdmin = this.guestService.isAdmin;
 
-  private readonly targetDate = new Date('2026-12-22T00:00:00');
+  private readonly weddingDate = new Date('2026-12-22T14:00:00');
   private intervalId?: ReturnType<typeof setInterval>;
 
-  countdown = signal<CountdownTime>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  time = signal<CountdownTime>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  wedded = signal(false);
 
   ngOnInit(): void {
     this.tick();
@@ -35,19 +36,18 @@ export class CountdownComponent implements OnInit, OnDestroy {
   }
 
   private tick(): void {
-    const diff = this.targetDate.getTime() - Date.now();
+    const diff = Date.now() - this.weddingDate.getTime();
+    const elapsed = diff >= 0;
 
-    if (diff <= 0) {
-      this.countdown.set({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-      return;
-    }
+    this.wedded.set(elapsed);
 
-    const days = Math.floor(diff / 86_400_000);
-    const hours = Math.floor((diff % 86_400_000) / 3_600_000);
-    const minutes = Math.floor((diff % 3_600_000) / 60_000);
-    const seconds = Math.floor((diff % 60_000) / 1000);
+    const ms = Math.abs(diff);
+    const days = Math.floor(ms / 86_400_000);
+    const hours = Math.floor((ms % 86_400_000) / 3_600_000);
+    const minutes = Math.floor((ms % 3_600_000) / 60_000);
+    const seconds = Math.floor((ms % 60_000) / 1000);
 
-    this.countdown.set({ days, hours, minutes, seconds });
+    this.time.set({ days, hours, minutes, seconds });
   }
 
   pad(n: number): string {
