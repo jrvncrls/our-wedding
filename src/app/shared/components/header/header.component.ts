@@ -1,7 +1,8 @@
-import { Component, computed, HostListener, OnDestroy, OnInit, signal } from '@angular/core';
+import { Component, computed, HostListener, inject, OnDestroy, OnInit, signal } from '@angular/core';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ButtonComponent } from '../button/button.component';
+import { GuestService } from '../../../features/wedding/services/guest.service';
 
 @Component({
   selector: 'app-header',
@@ -11,6 +12,9 @@ import { ButtonComponent } from '../button/button.component';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent implements OnInit, OnDestroy {
+  private guestService = inject(GuestService);
+  isAdmin = this.guestService.isAdmin;
+
   mobileMenuOpen = signal(false);
   weddingDropdownOpen = signal(false);
   mobileWeddingOpen = signal(false);

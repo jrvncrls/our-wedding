@@ -40,4 +40,6 @@ export class WeddingHomeComponent {
     const guest = this.guestService.guest();
     return guest?.nickname ?? guest?.first_name ?? 'Undin';
   });
+
+  protected isAdmin = this.guestService.isAdmin;
 }

@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, computed, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../../../environments/environment';
@@ -15,12 +15,17 @@ export interface Guest {
 }
 
 const TOKEN_KEY = 'guest_token';
+const ADMIN_TOKENS = new Set(['dH9XgKdDdz', 'W3iZnDIJ2q']);
 
 @Injectable({ providedIn: 'root' })
 export class GuestService {
   private readonly baseUrl = environment.apiBaseUrl;
 
   readonly guest = signal<Guest | null>(null);
+  readonly isAdmin = computed(() => {
+    const token = this.guest()?.token;
+    return token != null && ADMIN_TOKENS.has(token);
+  });
 
   constructor(private http: HttpClient) {}
 

@@ -1,4 +1,9 @@
-<section class="countdown section section--cream" id="countdown" aria-label="Countdown to wedding">
+<section
+  class="countdown section section--cream"
+  id="countdown"
+  aria-label="Countdown to wedding"
+  [class.countdown--admin]="isAdmin()"
+>
   <div class="container">
     <div class="countdown__header">
       <h2>Countdown</h2>

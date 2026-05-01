@@ -90,9 +90,11 @@
     </div>
 
     <!-- Desktop CTA -->
-    <div class="header__cta">
-      <app-button variant="primary" size="sm" (clicked)="scrollTo('rsvp')">RSVP</app-button>
-    </div>
+    @if (!isAdmin()) {
+      <div class="header__cta">
+        <app-button variant="primary" size="sm" (clicked)="scrollTo('rsvp')">RSVP</app-button>
+      </div>
+    }
 
     <!-- Hamburger -->
     <button
@@ -185,10 +187,12 @@
       </ul>
     </nav>
 
-    <div class="header__mobile-cta">
-      <app-button variant="primary" [fullWidth]="true" (clicked)="scrollTo('rsvp')"
-        >RSVP Now</app-button
-      >
-    </div>
+    @if (!isAdmin()) {
+      <div class="header__mobile-cta">
+        <app-button variant="primary" [fullWidth]="true" (clicked)="scrollTo('rsvp')"
+          >RSVP Now</app-button
+        >
+      </div>
+    }
   </div>
 </header>

@@ -1,4 +1,5 @@
-import { Component, OnInit, OnDestroy, signal } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
+import { GuestService } from '../../services/guest.service';
 
 interface CountdownTime {
   days: number;
@@ -14,6 +15,9 @@ interface CountdownTime {
   styleUrl: './countdown.component.scss',
 })
 export class CountdownComponent implements OnInit, OnDestroy {
+  private guestService = inject(GuestService);
+  isAdmin = this.guestService.isAdmin;
+
   private readonly targetDate = new Date('2026-12-22T00:00:00');
   private intervalId?: ReturnType<typeof setInterval>;
 

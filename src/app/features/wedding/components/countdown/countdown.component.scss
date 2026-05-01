@@ -3,6 +3,10 @@
 .countdown {
   text-align: center;
 
+  &--admin {
+    padding-top: 8rem;
+  }
+
   &__header {
     margin-bottom: var(--space-8);
 
