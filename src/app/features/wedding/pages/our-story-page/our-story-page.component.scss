@@ -3,7 +3,6 @@
 .story-page {
   min-height: 100vh;
   padding-top: calc(var(--space-16) + 80px);
-  padding-bottom: var(--space-24);
 
   // ── Page header ──────────────────────────────────────────────
   &__header {
@@ -76,12 +75,8 @@
     display: flex;
     align-items: center;
     gap: var(--space-4);
-    margin: 0 auto var(--space-16);
+    margin: var(--space-16) auto 0;
     max-width: 480px;
-
-    @include m.from(md) {
-      margin-bottom: var(--space-20);
-    }
   }
 
   &__divider-line {
@@ -96,53 +91,22 @@
     flex-shrink: 0;
   }
 
-  // ── Collage placeholder ──────────────────────────────────────
+  &__gallery {
+    display: flex;
+    justify-content: center;
+  }
+
+  // ── Collage video ──────────────────────────────────────────────
   &__collage {
     width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: var(--radius-xl);
-    background: linear-gradient(
-      145deg,
-      var(--color-primary-50) 0%,
-      var(--color-white) 50%,
-      var(--color-primary-100) 100%
-    );
-    box-shadow:
-      0 4px 24px hsla(36, 28%, 56%, 0.14),
-      inset 0 1px 0 hsla(0, 0%, 100%, 0.9);
-    border: 1.5px dashed var(--color-primary-300);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    @include m.from(md) {
-      aspect-ratio: 16 / 7;
-    }
+    max-width: 660px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px hsla(36, 28%, 56%, 0.14);
   }
 
-  &__collage-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-3);
-    color: var(--color-primary-400);
-  }
-
-  &__collage-icon {
-    font-size: 3.5rem;
-    opacity: 0.6;
-  }
-
-  &__collage-label {
-    font: var(--body-md-medium) var(--font-primary);
-    color: var(--color-primary-500);
-  }
-
-  &__collage-hint {
-    font: var(--body-sm-regular) var(--font-primary);
-    color: var(--color-neutral-400);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    font-size: 0.7rem;
+  &__collage-video {
+    width: 100%;
+    max-width: 660px;
+    display: block;
   }
 }
