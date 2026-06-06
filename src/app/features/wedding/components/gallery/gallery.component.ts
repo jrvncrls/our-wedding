@@ -25,24 +25,24 @@ export class GalleryComponent implements OnInit, OnDestroy {
 
   readonly images: GalleryImage[] = [
     {
-      src: 'gallery-landscapes/KANE8791.jpg',
+      src: 'gallery-landscapes-optimized/KANE8791.webp',
       alt: 'Jervin and Jarmaine — engagement shoot',
     },
     {
-      src: 'gallery-landscapes/KANE8931.jpg',
+      src: 'gallery-landscapes-optimized/KANE8931.webp',
       alt: 'Jervin and Jarmaine — engagement shoot',
     },
     {
-      src: 'gallery-landscapes/KANE9170.jpg',
+      src: 'gallery-landscapes-optimized/KANE9170.webp',
       alt: 'Jervin and Jarmaine — engagement shoot',
     },
     {
-      src: 'gallery-landscapes/KANE9523.jpg',
+      src: 'gallery-landscapes-optimized/KANE9523.webp',
       alt: 'Jervin and Jarmaine — engagement shoot',
       position: 'top',
     },
     {
-      src: 'gallery-landscapes/KANE9638.jpg',
+      src: 'gallery-landscapes-optimized/KANE9638.webp',
       alt: 'Jervin and Jarmaine — engagement shoot',
     },
   ];
