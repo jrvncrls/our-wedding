@@ -9,7 +9,7 @@
           role="img"
           [attr.aria-label]="image.alt"
         >
-          <div class="gallery__image-wrapper" [style.background-image]="'url(' + image.src + ')'">
+          <div class="gallery__image-wrapper" [style.background-image]="'url(' + image.src + ')'" [style.background-position]="image.position ?? 'center'">
             <!-- <div class="gallery__placeholder" aria-hidden="true">
               <i class="uil uil-image"></i>
               <span>Add your photo here</span>

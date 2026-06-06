@@ -6,6 +6,7 @@ export interface GalleryImage {
   src: string;
   alt: string;
   caption?: string;
+  position?: string;
 }
 
 @Component({
@@ -22,27 +23,27 @@ export class GalleryComponent implements OnInit, OnDestroy {
     this.router.navigate(['/our-gallery']);
   }
 
-  // Replace these paths with actual wedding photos in public/assets/gallery/
   readonly images: GalleryImage[] = [
     {
-      src: 'https://images.unsplash.com/photo-1473177104440-ffee2f376098?auto=format&fit=crop&w=1920',
+      src: 'gallery-landscapes/KANE8791.jpg',
       alt: 'Jervin and Jarmaine — engagement shoot',
     },
     {
-      src: 'https://images.unsplash.com/photo-1558929992-f57215da003e?auto=format&fit=crop&w=1920',
-      alt: 'Couple at the beach',
+      src: 'gallery-landscapes/KANE8931.jpg',
+      alt: 'Jervin and Jarmaine — engagement shoot',
     },
     {
-      src: 'https://images.unsplash.com/photo-1558929992-f57215da003e?auto=format&fit=crop&w=1920',
-      alt: 'Engagement photo',
+      src: 'gallery-landscapes/KANE9170.jpg',
+      alt: 'Jervin and Jarmaine — engagement shoot',
     },
     {
-      src: 'https://images.unsplash.com/photo-1473177104440-ffee2f376098?auto=format&fit=crop&w=1920',
-      alt: 'Couple at sunset',
+      src: 'gallery-landscapes/KANE9523.jpg',
+      alt: 'Jervin and Jarmaine — engagement shoot',
+      position: 'top',
     },
     {
-      src: 'https://images.unsplash.com/photo-1558929992-f57215da003e?auto=format&fit=crop&w=1920',
-      alt: 'Pre-wedding shoot',
+      src: 'gallery-landscapes/KANE9638.jpg',
+      alt: 'Jervin and Jarmaine — engagement shoot',
     },
   ];
 
