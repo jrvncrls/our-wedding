@@ -1,6 +1,11 @@
 <section class="gallery" id="gallery" aria-label="Photo gallery">
   <div class="gallery__carousel" role="region" aria-label="Photo carousel">
-    <div class="gallery__slides" aria-live="polite">
+    <div
+      class="gallery__slides"
+      aria-live="polite"
+      (touchstart)="onTouchStart($event)"
+      (touchend)="onTouchEnd($event)"
+    >
       @for (image of images; track image.src; let i = $index) {
         <div
           class="gallery__slide"
@@ -9,7 +14,11 @@
           role="img"
           [attr.aria-label]="image.alt"
         >
-          <div class="gallery__image-wrapper" [style.background-image]="'url(' + image.src + ')'" [style.background-position]="image.position ?? 'center'">
+          <div
+            class="gallery__image-wrapper"
+            [style.background-image]="'url(' + image.src + ')'"
+            [style.--img-position]="image.position ?? 'center'"
+          >
             <!-- <div class="gallery__placeholder" aria-hidden="true">
               <i class="uil uil-image"></i>
               <span>Add your photo here</span>
@@ -20,7 +29,7 @@
     </div>
 
     <div class="gallery__cta">
-      <app-button variant="outline-white" size="md" (clicked)="goToGallery()">
+      <app-button variant="outline-white" size="sm" (clicked)="goToGallery()">
         <i class="uil uil-images"></i>
         Check Out Gallery
       </app-button>

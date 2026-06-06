@@ -73,6 +73,18 @@ export class GalleryComponent implements OnInit, OnDestroy {
     this.currentIndex.update((i) => (i + 1) % this.images.length);
   }
 
+  private touchStartX = 0;
+
+  onTouchStart(event: TouchEvent): void {
+    this.touchStartX = event.touches[0].clientX;
+  }
+
+  onTouchEnd(event: TouchEvent): void {
+    const delta = this.touchStartX - event.changedTouches[0].clientX;
+    if (Math.abs(delta) < 40) return;
+    delta > 0 ? this.next() : this.prev();
+  }
+
   goTo(index: number): void {
     this.stopAutoPlay();
     this.currentIndex.set(index);
