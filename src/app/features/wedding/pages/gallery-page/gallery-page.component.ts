@@ -26,7 +26,7 @@ export interface GalleryPhoto {
 export class GalleryPageComponent implements AfterViewInit, OnDestroy {
   @ViewChildren('tile') private tileRefs!: QueryList<ElementRef<HTMLElement>>;
 
-  readonly googleDriveUrl = 'YOUR_GOOGLE_DRIVE_URL';
+  readonly googleDriveUrl = 'https://drive.google.com/drive/u/4/folders/19_i4j1yS0wcuFUupkw1_a38c2aw4-lPk';
 
   readonly photos: GalleryPhoto[] = [
     { src: 'gallery-pictures/KANE7790.webp', alt: 'Jervin and Jarmaine' },
