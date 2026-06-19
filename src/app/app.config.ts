@@ -1,11 +1,18 @@
-import { ApplicationConfig, inject, provideAppInitializer, provideZoneChangeDetection } from '@angular/core';
 import { provideHttpClient } from '@angular/common/http';
+import {
+  ApplicationConfig,
+  inject,
+  provideAppInitializer,
+  provideZoneChangeDetection,
+} from '@angular/core';
 import { provideRouter, withInMemoryScrolling } from '@angular/router';
-import { forkJoin, firstValueFrom, of, catchError } from 'rxjs';
+import { catchError, firstValueFrom, forkJoin, of } from 'rxjs';
 
 import { routes } from './app.routes';
 import { GuestService } from './features/wedding/services/guest.service';
 import { RsvpService } from './features/wedding/services/rsvp.service';
+
+const default_token = 'dH9XgKdDdz';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -17,7 +24,8 @@ export const appConfig: ApplicationConfig = {
       const rsvpService = inject(RsvpService);
       const token =
         new URLSearchParams(window.location.search).get('token') ??
-        guestService.getStoredToken();
+        guestService.getStoredToken() ??
+        default_token;
 
       if (!token) return;
 
