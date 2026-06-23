@@ -12,7 +12,7 @@ import { routes } from './app.routes';
 import { GuestService } from './features/wedding/services/guest.service';
 import { RsvpService } from './features/wedding/services/rsvp.service';
 
-const default_token = 'qVf8bUoEns';
+const default_token = 'W3iZnDIJ2q';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -23,7 +23,9 @@ export const appConfig: ApplicationConfig = {
       const guestService = inject(GuestService);
       const rsvpService = inject(RsvpService);
       const token =
-        new URLSearchParams(window.location.search).get('token') ?? guestService.getStoredToken();
+        new URLSearchParams(window.location.search).get('token') ??
+        guestService.getStoredToken() ??
+        default_token;
 
       if (!token) return;
 
