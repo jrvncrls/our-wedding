@@ -15,7 +15,7 @@ export interface Guest {
 }
 
 const TOKEN_KEY = 'guest_token';
-const ADMIN_TOKENS = new Set(['qVf8bUoEns']);
+const ADMIN_TOKENS = new Set(['dH9XgKdDdz', 'W3iZnDIJ2q', 'qVf8bUoEns']);
 
 @Injectable({ providedIn: 'root' })
 export class GuestService {
