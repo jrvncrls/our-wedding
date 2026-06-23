@@ -23,9 +23,7 @@ export const appConfig: ApplicationConfig = {
       const guestService = inject(GuestService);
       const rsvpService = inject(RsvpService);
       const token =
-        new URLSearchParams(window.location.search).get('token') ??
-        guestService.getStoredToken() ??
-        default_token;
+        new URLSearchParams(window.location.search).get('token') ?? guestService.getStoredToken();
 
       if (!token) return;
 
