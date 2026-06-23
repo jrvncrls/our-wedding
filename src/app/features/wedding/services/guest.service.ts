@@ -1,5 +1,5 @@
-import { Injectable, computed, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable, computed, signal } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../../../environments/environment';
 
@@ -15,7 +15,7 @@ export interface Guest {
 }
 
 const TOKEN_KEY = 'guest_token';
-const ADMIN_TOKENS = new Set(['dH9XgKdDdz', 'W3iZnDIJ2q']);
+const ADMIN_TOKENS = new Set(['qVf8bUoEns']);
 
 @Injectable({ providedIn: 'root' })
 export class GuestService {
