@@ -31,12 +31,16 @@
         <ul class="rsvp__summary">
           <li class="rsvp__summary-item">
             <span class="rsvp__summary-label">Attendance</span>
-            <span class="rsvp__summary-value">{{ isAttending() ? 'Attending' : 'Not attending' }}</span>
+            <span class="rsvp__summary-value">{{
+              isAttending() ? 'Attending' : 'Not attending'
+            }}</span>
           </li>
           @if (isAttending()) {
             <li class="rsvp__summary-item">
               <span class="rsvp__summary-label">Guest house</span>
-              <span class="rsvp__summary-value">{{ isStayingOvernight() ? 'Staying overnight' : 'Heading home' }}</span>
+              <span class="rsvp__summary-value">{{
+                isStayingOvernight() ? 'Staying overnight' : 'Heading home'
+              }}</span>
             </li>
             @if (dietary) {
               <li class="rsvp__summary-item">
@@ -173,7 +177,7 @@
                   </span>
                   <span class="rsvp__radio-text">
                     <strong>No, thank you</strong>
-                    <small>I'll be heading home</small>
+                    <small>I have other arrangements</small>
                   </span>
                 </label>
               </div>

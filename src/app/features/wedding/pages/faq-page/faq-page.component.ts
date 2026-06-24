@@ -43,7 +43,7 @@ export class FaqPageComponent {
     {
       question: 'Parking & Accommodations',
       answer:
-        'Complimentary parking is available at both the chapel and the reception. For those wishing to stay, a shared guest house has been arranged for the night. Please confirm your interest via your RSVP.',
+        'Complimentary parking is available at both the chapel and the reception. For guests who wish to stay, shared accommodations have been arranged in a guest house for the evening. Please note that this will be shared with fellow guests, including the families and friends of the bride and groom. Kindly indicate your interest in your RSVP.',
     },
   ];
 
