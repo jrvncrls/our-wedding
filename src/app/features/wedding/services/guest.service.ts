@@ -12,6 +12,7 @@ export interface Guest {
   email: string | null;
   last_open_link_date: string | null;
   created_at: string;
+  is_family: boolean;
 }
 
 const TOKEN_KEY = 'guest_token';

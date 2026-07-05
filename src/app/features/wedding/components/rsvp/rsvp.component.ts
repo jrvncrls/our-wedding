@@ -45,7 +45,7 @@ export class RsvpComponent {
       .valueChanges.pipe(takeUntilDestroyed())
       .subscribe((val) => {
         const ctrl = this.form.get('stayOvernight')!;
-        if (val === 'yes') {
+        if (val === 'yes' && this.isFamily()) {
           ctrl.setValidators(Validators.required);
         } else {
           ctrl.clearValidators();
@@ -71,6 +71,10 @@ export class RsvpComponent {
 
   isNotAttending(): boolean {
     return this.form.get('attending')?.value === 'no';
+  }
+
+  isFamily(): boolean {
+    return this.guestService.guest()?.is_family === true;
   }
 
   isStayingOvernight(): boolean {

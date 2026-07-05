@@ -36,12 +36,14 @@
             }}</span>
           </li>
           @if (isAttending()) {
-            <li class="rsvp__summary-item">
-              <span class="rsvp__summary-label">Guest house</span>
-              <span class="rsvp__summary-value">{{
-                isStayingOvernight() ? 'Staying overnight' : 'Heading home'
-              }}</span>
-            </li>
+            @if (isFamily()) {
+              <li class="rsvp__summary-item">
+                <span class="rsvp__summary-label">Guest house</span>
+                <span class="rsvp__summary-value">{{
+                  isStayingOvernight() ? 'Staying overnight' : 'Heading home'
+                }}</span>
+              </li>
+            }
             @if (dietary) {
               <li class="rsvp__summary-item">
                 <span class="rsvp__summary-label">Dietary</span>
@@ -131,8 +133,8 @@
           </div>
         }
 
-        <!-- Guest house (only when attending) -->
-        @if (isAttending()) {
+        <!-- Guest house (only when attending and family) -->
+        @if (isAttending() && isFamily()) {
           <div class="rsvp__field rsvp__field--animate">
             <fieldset class="rsvp__fieldset">
               <legend class="rsvp__label">

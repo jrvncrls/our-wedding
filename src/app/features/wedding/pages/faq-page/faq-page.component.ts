@@ -1,4 +1,5 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
+import { GuestService } from '../../services/guest.service';
 
 interface FaqItem {
   question: string;
@@ -13,9 +14,13 @@ interface FaqItem {
   styleUrl: './faq-page.component.scss',
 })
 export class FaqPageComponent {
+  private guestService = inject(GuestService);
+
   openIndex = signal<number | null>(null);
 
-  readonly faqs: FaqItem[] = [
+  private readonly isFamily = computed(() => this.guestService.guest()?.is_family === true);
+
+  readonly faqs = computed<FaqItem[]>(() => [
     {
       question: 'Arrival & Timing',
       answer:
@@ -40,12 +45,17 @@ export class FaqPageComponent {
       question: 'The RSVP',
       answer: `A formal RSVP is required for all guests. As a token of our gratitude, a special gift awaits those who confirm their attendance by the deadline.\n\nChange of plans? If your attendance status changes after you have RSVP'd, please contact the couple directly as soon as possible.`,
     },
-    {
-      question: 'Parking & Accommodations',
-      answer:
-        'Complimentary parking is available at both the chapel and the reception. For guests who wish to stay, shared accommodations have been arranged in a guest house for the evening. Please note that this will be shared with fellow guests, including the families and friends of the bride and groom. Kindly indicate your interest in your RSVP.',
-    },
-  ];
+    this.isFamily()
+      ? {
+          question: 'Parking & Accommodations',
+          answer:
+            'Complimentary parking is available at both the chapel and the reception. For guests who wish to stay, shared accommodations have been arranged in a guest house for the evening. Please note that this will be shared with fellow guests, including the families and friends of the bride and groom. Kindly indicate your interest in your RSVP.',
+        }
+      : {
+          question: 'Parking',
+          answer: 'Complimentary parking is available at both the chapel and the reception.',
+        },
+  ]);
 
   toggle(index: number): void {
     this.openIndex.update((current) => (current === index ? null : index));

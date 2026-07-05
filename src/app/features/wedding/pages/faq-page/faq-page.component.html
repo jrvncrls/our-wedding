@@ -11,7 +11,7 @@
     </div>
 
     <div class="faq-page__list" role="list">
-      @for (faq of faqs; track faq.question; let i = $index) {
+      @for (faq of faqs(); track faq.question; let i = $index) {
         <div
           class="faq-page__item"
           [class.faq-page__item--open]="isOpen(i)"
