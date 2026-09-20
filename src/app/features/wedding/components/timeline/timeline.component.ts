@@ -16,7 +16,7 @@ export interface TimelineEvent {
 export class TimelineComponent {
   readonly events: TimelineEvent[] = [
     {
-      time: '2:00 PM',
+      time: '1:00 PM',
       title: 'Ceremony',
       description: '',
       image:
